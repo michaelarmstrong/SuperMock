@@ -96,7 +96,13 @@ class SuperMockResponseHelper: NSObject {
     }
     
     func mimeType(url: NSURL!) -> String? {
-        return mimes[url.pathExtension!]
+        
+        if let pathExtension = url.pathExtension {
+            if let mime = mimes[pathExtension] {
+                return mime
+            }
+        }
+        return "text/plain"
     }
 
     private func mockedResponse(url: NSURL) -> NSData? {
