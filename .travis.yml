@@ -1,7 +1,9 @@
 # references:
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
+
 osx_image: xcode7.1
+
 env:
 - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
 
@@ -14,5 +16,5 @@ language: objective-c
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-- set -o pipefail && xcodebuild test -workspace Example/SuperMock.xcworkspace -scheme SuperMock-Example -sdk iphonesimulator9.1 ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- set -o pipefail && xcodebuild test -workspace Example/SuperMock.xcworkspace -scheme SuperMock-Example -sdk iphonesimulator9.1 ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6" | xcpretty -c
 - pod lib lint --quick
