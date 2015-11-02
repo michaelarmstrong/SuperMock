@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SuperMock_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Mj-b9t">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-Vh-Usx">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Ra-XP-5tj"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="MOCK" id="BsF-Qc-58t">
+                                        <connections>
+                                            <action selector="performMockedRequest:" destination="vXZ-lx-hvc" id="E1i-xS-wCb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="05A-qZ-TYD"/>
+                                    <barButtonItem title="NONMOCK" id="kog-X4-94Z">
+                                        <connections>
+                                            <action selector="performRealRequest:" destination="vXZ-lx-hvc" id="gwD-RN-gGS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="t84-Mj-b9t" secondAttribute="bottom" id="BME-VL-cb9"/>
+                            <constraint firstAttribute="trailing" secondItem="t84-Mj-b9t" secondAttribute="trailing" id="Hfk-Nt-e7b"/>
+                            <constraint firstItem="KEq-Vh-Usx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Qfi-xZ-4q8"/>
+                            <constraint firstItem="t84-Mj-b9t" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="czO-9K-vhq"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KEq-Vh-Usx" secondAttribute="bottom" id="kaR-p4-0hr"/>
+                            <constraint firstAttribute="trailing" secondItem="KEq-Vh-Usx" secondAttribute="trailing" id="twx-uy-ad5"/>
+                            <constraint firstItem="t84-Mj-b9t" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wXB-eU-NjW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="t84-Mj-b9t" id="ZOi-c1-VEK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="488" y="247"/>
         </scene>
     </scenes>
 </document>

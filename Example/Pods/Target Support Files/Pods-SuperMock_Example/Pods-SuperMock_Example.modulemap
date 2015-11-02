@@ -1,0 +1,6 @@
+framework module Pods_SuperMock_Example {
+  umbrella header "Pods-SuperMock_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

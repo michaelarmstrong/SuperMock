@@ -1,0 +1,6 @@
+framework module SuperMock {
+  umbrella header "SuperMock-umbrella.h"
+
+  export *
+  module * { export * }
+}

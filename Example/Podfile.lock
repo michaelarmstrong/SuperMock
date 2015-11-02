@@ -1,0 +1,14 @@
+PODS:
+  - SuperMock (0.1.0)
+
+DEPENDENCIES:
+  - SuperMock (from `../`)
+
+EXTERNAL SOURCES:
+  SuperMock:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SuperMock: 7b14ecc880d96043515aa7a83e251f52c6845ba5
+
+COCOAPODS: 0.39.0

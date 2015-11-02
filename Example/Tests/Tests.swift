@@ -1,29 +1,87 @@
 import UIKit
 import XCTest
-import SuperMock
+@testable import SuperMock
 
 class Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        SuperMock.beginMocking(NSBundle(forClass: AppDelegate.self))
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        SuperMock.endMocking()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testValidGETRequestWithMockReturnsExpectedMockedData() {
+        
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        
+        let url = NSURL(string: "http://mike.kz/")!
+        let realRequest = NSMutableURLRequest(URL: url)
+        realRequest.HTTPMethod = "GET"
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        
+        let bundle = NSBundle(forClass: AppDelegate.self)
+        let pathToExpectedData = bundle.pathForResource("sample", ofType: "html")!
+
+        let expectedData = NSData(contentsOfFile: pathToExpectedData)
+        let returnedData = responseHelper.responseForMockRequest(mockRequest)
+        
+        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testValidPOSTRequestWithMockReturnsExpectedMockedData() {
+        
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        
+        let url = NSURL(string: "http://mike.kz/")!
+        let realRequest = NSMutableURLRequest(URL: url)
+        realRequest.HTTPMethod = "POST"
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        
+        let bundle = NSBundle(forClass: AppDelegate.self)
+        let pathToExpectedData = bundle.pathForResource("samplePOST", ofType: "html")!
+        
+        let expectedData = NSData(contentsOfFile: pathToExpectedData)
+        let returnedData = responseHelper.responseForMockRequest(mockRequest)
+        
+        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+        
     }
     
+    func testValidRequestWithNoMockReturnsOriginalRequest() {
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        
+        let url = NSURL(string: "http://nomockavailable.com")!
+        let realRequest = NSURLRequest(URL: url)
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        
+        XCTAssert(realRequest == mockRequest, "Original request should be returned when no mock is available.")
+    }
+    
+    func testValidRequestWithMockReturnsDifferentRequest() {
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        
+        let url = NSURL(string: "http://mike.kz/")!
+        let realRequest = NSURLRequest(URL: url)
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        
+        XCTAssert(realRequest != mockRequest, "Different request should be returned when a mock is available.")
+    }
+    
+    func testValidRequestWithMockReturnsFileURLRequest() {
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        
+        let url = NSURL(string: "http://mike.kz/")!
+        let realRequest = NSURLRequest(URL: url)
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        
+        XCTAssert(mockRequest.URL!.fileURL, "fileURL mocked request should be returned when a mock is available.")
+    }
+
 }

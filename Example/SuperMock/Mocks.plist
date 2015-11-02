@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mimes</key>
+	<dict>
+		<key>html</key>
+		<string>text/html</string>
+		<key>htm</key>
+		<string>text/html</string>
+		<key>json</key>
+		<string>application/json</string>
+	</dict>
+	<key>mocks</key>
+	<dict>
+		<key>DELETE</key>
+		<dict/>
+		<key>PUT</key>
+		<dict/>
+		<key>POST</key>
+		<dict>
+			<key>http://mike.kz/</key>
+			<string>samplePOST.html</string>
+		</dict>
+		<key>GET</key>
+		<dict>
+			<key>http://mike.kz/</key>
+			<string>sample.html</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

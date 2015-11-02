@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/SuperMock.svg?style=flat)](http://cocoapods.org/pods/SuperMock)
 [![Platform](https://img.shields.io/cocoapods/p/SuperMock.svg?style=flat)](http://cocoapods.org/pods/SuperMock)
 
+A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app and is completely offline.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +24,7 @@ pod "SuperMock"
 
 ## Author
 
-Michael Armstrong, michael.armstrong@me.com
+Michael Armstrong, @ArmstrongAtWork
 
 ## License
 
