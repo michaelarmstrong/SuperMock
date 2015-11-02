@@ -1,6 +1,6 @@
 # SuperMock
 
-[![CI Status](http://img.shields.io/travis/Michael Armstrong/SuperMock.svg?style=flat)](https://travis-ci.org/Michael Armstrong/SuperMock)
+[![CI Status](http://img.shields.io/travis/michaelarmstrong/SuperMock.svg?style=flat)](https://travis-ci.org/Michael Armstrong/SuperMock)
 [![Version](https://img.shields.io/cocoapods/v/SuperMock.svg?style=flat)](http://cocoapods.org/pods/SuperMock)
 [![License](https://img.shields.io/cocoapods/l/SuperMock.svg?style=flat)](http://cocoapods.org/pods/SuperMock)
 [![Platform](https://img.shields.io/cocoapods/p/SuperMock.svg?style=flat)](http://cocoapods.org/pods/SuperMock)
