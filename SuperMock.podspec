@@ -1,30 +1,17 @@
-#
-# Be sure to run `pod lib lint SuperMock.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "SuperMock"
   s.version          = "0.1.0"
-  s.summary          = "A short description of SuperMock."
+  s.summary          = "A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app and is completely offline."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+	A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app and is completely offline. Setup your mocks at the start rather than on a per test basis. More description TBC.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SuperMock"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/michaelarmstrong/SuperMock"
   s.license          = 'MIT'
-  s.author           = { "Michael Armstrong" => "michael.armstrong@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SuperMock.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Michael Armstrong" => "@ArmstrongAtWork" }
+  s.source           = { :git => "https://github.com/michaelarmstrong/SuperMock.git", :tag => s.version.to_s }
+   s.social_media_url = 'https://twitter.com/ArmstrongAtWork'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -34,7 +21,4 @@ Pod::Spec.new do |s|
     'SuperMock' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
