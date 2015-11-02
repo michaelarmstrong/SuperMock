@@ -28,6 +28,10 @@
 		630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEBC1BE78CB600D18B4E /* samplePOST.html */; };
 		630ACEC01BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */; };
 		630ACEC11BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */; };
+		630ACEC91BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */; };
+		630ACED11BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
+		630ACED21BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
+		630ACED31BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
 		879ED7B2F71E032A8114F582 /* Pods_SuperMock_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E483D97D007BA7B53B0EE3A /* Pods_SuperMock_Tests.framework */; };
 		AD2C93C9D0845BBC4ECE7F7D /* Pods_SuperMock_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4B020307AD9440E13068F0 /* Pods_SuperMock_Example.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +43,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = SuperMock;
+		};
+		630ACECB1BE7E1D200D18B4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = SuperMock_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,6 +76,10 @@
 		630ACEB91BE77F1C00D18B4E /* sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
 		630ACEBC1BE78CB600D18B4E /* samplePOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = samplePOST.html; sourceTree = "<group>"; };
 		630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperMockNSURLRequestExtension.swift; path = ../SuperMockNSURLRequestExtension.swift; sourceTree = "<group>"; };
+		630ACEC61BE7E1D200D18B4E /* SuperMock_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMock_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMock_ExampleUITests.swift; sourceTree = "<group>"; };
+		630ACECA1BE7E1D200D18B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630ACED01BE7E39400D18B4E /* buttons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buttons.txt; sourceTree = "<group>"; };
 		710EF85D42E5856CA0778706 /* Pods-SuperMock_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMock_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMock_Example/Pods-SuperMock_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4B020307AD9440E13068F0 /* Pods_SuperMock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05ABBA08000628BBF58ECD1 /* SuperMock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperMock.podspec; path = ../SuperMock.podspec; sourceTree = "<group>"; };
@@ -88,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		630ACEC31BE7E1D200D18B4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +120,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SuperMock */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				630ACEC71BE7E1D200D18B4E /* SuperMock_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				DC1EE2AA26F71CCC17A43656 /* Pods */,
 				9EB096F9F940941843B149D0 /* Frameworks */,
@@ -109,6 +132,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* SuperMock_Example.app */,
 				607FACE51AFB9204008FA782 /* SuperMock_Tests.xctest */,
+				630ACEC61BE7E1D200D18B4E /* SuperMock_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +142,7 @@
 			children = (
 				630ACEBC1BE78CB600D18B4E /* samplePOST.html */,
 				630ACEB91BE77F1C00D18B4E /* sample.html */,
+				630ACED01BE7E39400D18B4E /* buttons.txt */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -174,6 +199,15 @@
 				630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */,
 			);
 			name = SuperMock;
+			sourceTree = "<group>";
+		};
+		630ACEC71BE7E1D200D18B4E /* SuperMock_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */,
+				630ACECA1BE7E1D200D18B4E /* Info.plist */,
+			);
+			path = SuperMock_ExampleUITests;
 			sourceTree = "<group>";
 		};
 		9EB096F9F940941843B149D0 /* Frameworks */ = {
@@ -240,12 +274,31 @@
 			productReference = 607FACE51AFB9204008FA782 /* SuperMock_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		630ACEC51BE7E1D200D18B4E /* SuperMock_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630ACECD1BE7E1D200D18B4E /* Build configuration list for PBXNativeTarget "SuperMock_ExampleUITests" */;
+			buildPhases = (
+				630ACEC21BE7E1D200D18B4E /* Sources */,
+				630ACEC31BE7E1D200D18B4E /* Frameworks */,
+				630ACEC41BE7E1D200D18B4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630ACECC1BE7E1D200D18B4E /* PBXTargetDependency */,
+			);
+			name = SuperMock_ExampleUITests;
+			productName = SuperMock_ExampleUITests;
+			productReference = 630ACEC61BE7E1D200D18B4E /* SuperMock_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -254,6 +307,10 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					630ACEC51BE7E1D200D18B4E = {
+						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -273,6 +330,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* SuperMock_Example */,
 				607FACE41AFB9204008FA782 /* SuperMock_Tests */,
+				630ACEC51BE7E1D200D18B4E /* SuperMock_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +345,7 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				630ACEB61BE75ECC00D18B4E /* Mocks.plist in Resources */,
 				630ACEBA1BE77F1C00D18B4E /* sample.html in Resources */,
+				630ACED11BE7E39400D18B4E /* buttons.txt in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +357,15 @@
 				630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */,
 				630ACEBB1BE77F1C00D18B4E /* sample.html in Resources */,
 				630ACEB71BE75ECC00D18B4E /* Mocks.plist in Resources */,
+				630ACED21BE7E39400D18B4E /* buttons.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630ACEC41BE7E1D200D18B4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630ACED31BE7E39400D18B4E /* buttons.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +491,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		630ACEC21BE7E1D200D18B4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630ACEC91BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -430,6 +506,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* SuperMock_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		630ACECC1BE7E1D200D18B4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* SuperMock_Example */;
+			targetProxy = 630ACECB1BE7E1D200D18B4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -542,6 +623,7 @@
 				INFOPLIST_FILE = SuperMock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.superarmstrong.demo.SuperMock-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -554,6 +636,7 @@
 				INFOPLIST_FILE = SuperMock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.superarmstrong.demo.SuperMock-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -594,6 +677,34 @@
 			};
 			name = Release;
 		};
+		630ACECE1BE7E1D200D18B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = SuperMock_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.superarmstrong.SuperMock-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperMock_Example;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		630ACECF1BE7E1D200D18B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SuperMock_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.superarmstrong.SuperMock-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperMock_Example;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,6 +734,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		630ACECD1BE7E1D200D18B4E /* Build configuration list for PBXNativeTarget "SuperMock_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630ACECE1BE7E1D200D18B4E /* Debug */,
+				630ACECF1BE7E1D200D18B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

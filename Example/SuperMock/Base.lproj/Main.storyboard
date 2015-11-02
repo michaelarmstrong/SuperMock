@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Mj-b9t">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="96" width="600" height="460"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
@@ -42,20 +42,59 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc1-K9-q6O">
+                                <rect key="frame" x="150" y="11" width="300" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzc-WY-RdN">
+                                        <rect key="frame" x="14" y="14" width="272" height="49"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.32119226629999997" green="0.60169664619999996" blue="0.83808791039999997" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="testableButtonOne"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="2c6-dl-VIX"/>
+                                            <constraint firstAttribute="width" constant="272" id="M4J-eA-Si3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="gd6-i5-wUb"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="i3z-yI-1L2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal" title="BUTTON">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="gd6-i5-wUb"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="DEt-tc-8U5"/>
+                                    <constraint firstAttribute="height" constant="77" id="OkB-Bo-pSx"/>
+                                    <constraint firstItem="Hzc-WY-RdN" firstAttribute="top" secondItem="Hc1-K9-q6O" secondAttribute="top" constant="14" id="WeG-6h-rLT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hzc-WY-RdN" secondAttribute="bottom" constant="14" id="ZBx-ym-98U"/>
+                                    <constraint firstItem="Hzc-WY-RdN" firstAttribute="leading" secondItem="Hc1-K9-q6O" secondAttribute="leading" constant="14" id="ooS-hv-zAw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="t84-Mj-b9t" secondAttribute="bottom" id="BME-VL-cb9"/>
                             <constraint firstAttribute="trailing" secondItem="t84-Mj-b9t" secondAttribute="trailing" id="Hfk-Nt-e7b"/>
+                            <constraint firstItem="Hc1-K9-q6O" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="KXe-Za-hxg"/>
                             <constraint firstItem="KEq-Vh-Usx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Qfi-xZ-4q8"/>
-                            <constraint firstItem="t84-Mj-b9t" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="czO-9K-vhq"/>
+                            <constraint firstItem="Hc1-K9-q6O" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="11" id="StE-cB-rcj"/>
+                            <constraint firstItem="t84-Mj-b9t" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="96" id="czO-9K-vhq"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KEq-Vh-Usx" secondAttribute="bottom" id="kaR-p4-0hr"/>
+                            <constraint firstItem="KEq-Vh-Usx" firstAttribute="top" secondItem="t84-Mj-b9t" secondAttribute="bottom" id="klE-ia-Tsy"/>
                             <constraint firstAttribute="trailing" secondItem="KEq-Vh-Usx" secondAttribute="trailing" id="twx-uy-ad5"/>
                             <constraint firstItem="t84-Mj-b9t" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wXB-eU-NjW"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="testableButtonOne" destination="Hzc-WY-RdN" id="wwT-cC-zmA"/>
                         <outlet property="webView" destination="t84-Mj-b9t" id="ZOi-c1-VEK"/>
                     </connections>
                 </viewController>

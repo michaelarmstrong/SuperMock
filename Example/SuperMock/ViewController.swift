@@ -14,6 +14,13 @@ class ViewController: UIViewController, UIWebViewDelegate {
     
     let urlSession = NSURLSession.sharedSession()
 
+    @IBOutlet weak var testableButtonOne: UIButton!    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateButtonTitles()
+    }
     
     @IBAction func performRealRequest(sender: AnyObject) {
     
@@ -47,7 +54,24 @@ class ViewController: UIViewController, UIWebViewDelegate {
         task.resume()
     }
     
-    
+   func updateButtonTitles() {
+        
+        let realURL = NSURL(string: "http://mike.kz/api/layout/buttons/")!
+        let requestToMock = NSURLRequest(URL: realURL)
+        
+        let task = urlSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+            if let data = data {
+                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+                print("Mock Response : \(stringResponse)")
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.testableButtonOne.setTitle(stringResponse, forState: .Normal)
+                    self.testableButtonOne.accessibilityValue = stringResponse
+                })
+            }
+        }
+        task.resume()
+    }
     
     
     

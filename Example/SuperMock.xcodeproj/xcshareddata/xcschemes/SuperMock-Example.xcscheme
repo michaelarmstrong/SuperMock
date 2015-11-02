@@ -52,6 +52,16 @@
                ReferencedContainer = "container:SuperMock.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "630ACEC51BE7E1D200D18B4E"
+               BuildableName = "SuperMock_ExampleUITests.xctest"
+               BlueprintName = "SuperMock_ExampleUITests"
+               ReferencedContainer = "container:SuperMock.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

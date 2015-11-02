@@ -26,6 +26,8 @@
 		<dict>
 			<key>http://mike.kz/</key>
 			<string>sample.html</string>
+			<key>http://mike.kz/api/layout/buttons/</key>
+			<string>buttons.txt</string>
 		</dict>
 	</dict>
 </dict>
