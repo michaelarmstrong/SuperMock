@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/michaelarmstrong/SuperMock"
   s.license          = 'MIT'
   s.author           = { "Michael Armstrong" => "@ArmstrongAtWork" }
-  s.source           = { :git => "https://github.com/michaelarmstrong/SuperMock.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/michaelarmstrong/SuperMock.git", :tag => s.version.to_s, :branch => 'master' }
   s.social_media_url = 'https://twitter.com/ArmstrongAtWork'
 
   s.platform     = :ios, '8.0'
