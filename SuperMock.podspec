@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "SuperMock"
   s.version          = "0.1.0"
-  s.summary          = "A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app code base and runs in your test-target offline."
+  s.summary          = "A very simple yet powerful UI and Unit testing HTTP mock framework. Lives in your app and runs offline."
 
   s.description      = <<-DESC
 	A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app and is completely offline. Setup your mocks at the start rather than on a per test basis.
