@@ -28,7 +28,14 @@ class SuperMockResponseHelper: NSObject {
         }
     }
     
+    /**
+     Automatically populated by Mocks.plist. A dictionary containing mocks loaded in from Mocks.plist, purposely not made private as can be modified at runtime to
+     provide alternative mocks for URL's on subsequent requests. Better support for this feature is coming in the future.
+     */
     var mocks = Dictionary<String,AnyObject>()
+    /**
+     Automatically populated by Mocks.plist. Dictionary containing all the associated and supported mime.types for mocks. Defaults to text/plain if none provided.
+     */
     var mimes = Dictionary<String,String>()
 
     enum RequestMethod : String {
@@ -53,6 +60,13 @@ class SuperMockResponseHelper: NSObject {
         }
     }
     
+    /**
+     Public method to construct and return (when needed) mock NSURLRequest objects.
+     
+     - parameter request: the original NSURLRequest to provide a mock for.
+     
+     - returns: NSURLRequest with manipulated resource identifier.
+     */
     func mockRequest(request: NSURLRequest) -> NSURLRequest {
         
         let requestMethod = RequestMethod(rawValue: request.HTTPMethod!)!
@@ -85,7 +99,15 @@ class SuperMockResponseHelper: NSObject {
         }
     }
     
-
+    /**
+     Public method to return data for associated mock requests.
+     
+     Will fail with a fatalError if called for items that are not represented on the local filesystem.
+     
+     - parameter request: the mock NSURLRequest object.
+     
+     - returns: NSData containing the mock response.
+     */
     func responseForMockRequest(request: NSURLRequest!) -> NSData? {
 
         if request.URL?.fileURL == false {
@@ -95,7 +117,16 @@ class SuperMockResponseHelper: NSObject {
         return mockedResponse(request.URL!)
     }
     
-    func mimeType(url: NSURL!) -> String? {
+    /**
+     Public method to return associated mimeTypes from the Mocks.plist configuration.
+  
+     Always returns a value. Defaults to "text/plain"
+     
+     - parameter url: Any NSURL object for which a mime.type is to be obtained.
+     
+     - returns: String containing RFC 6838 compliant mime.type
+     */
+    func mimeType(url: NSURL!) -> String {
         
         if let pathExtension = url.pathExtension {
             if let mime = mimes[pathExtension] {

@@ -10,6 +10,11 @@ import Foundation
 
 extension NSURLRequest {
     
+    /**
+     Call to determine whether or not a NSURLRequest has an applicable mock setup in Mocks.plist
+     
+     - returns: Bool determining outcome.
+     */
     func hasMock() -> Bool {
         
         let mockRequest = SuperMockResponseHelper.sharedHelper.mockRequest(self)
