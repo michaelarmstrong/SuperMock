@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SuperMock: 7b14ecc880d96043515aa7a83e251f52c6845ba5
+  SuperMock: df97293409fcc2f6dd67e37d6cbdb7e57b9bcfa7
 
 COCOAPODS: 0.39.0

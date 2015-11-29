@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuperMock: NSObject {
+public class SuperMock: NSObject {
     
     /**
      Begin stubbing responses to NSURLConnection / NSURLSession methods.
@@ -21,7 +21,7 @@ class SuperMock: NSObject {
      
      - returns: void
      */
-    class func beginMocking(bundle: NSBundle!, mocksFile: String? = "Mocks.plist") {
+    public class func beginMocking(bundle: NSBundle!, mocksFile: String? = "Mocks.plist") {
         
         NSURLProtocol.registerClass(SuperMockURLProtocol)
         NSURLSessionConfiguration.defaultSessionConfiguration().protocolClasses = [SuperMockURLProtocol.self]
@@ -52,7 +52,7 @@ class SuperMock: NSObject {
      
      - returns: void
      */
-    class func endMocking() {
+    public class func endMocking() {
         NSURLProtocol.unregisterClass(SuperMockURLProtocol)
     }
 

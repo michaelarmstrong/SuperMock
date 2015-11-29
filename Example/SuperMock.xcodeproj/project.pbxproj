@@ -13,12 +13,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		630ACEAD1BE75BBE00D18B4E /* SuperMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEAC1BE75BBE00D18B4E /* SuperMockURLProtocol.swift */; };
-		630ACEAE1BE75BBE00D18B4E /* SuperMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEAC1BE75BBE00D18B4E /* SuperMockURLProtocol.swift */; };
-		630ACEB01BE75CEB00D18B4E /* SuperMockResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEAF1BE75CEB00D18B4E /* SuperMockResponseHelper.swift */; };
-		630ACEB11BE75CEB00D18B4E /* SuperMockResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEAF1BE75CEB00D18B4E /* SuperMockResponseHelper.swift */; };
-		630ACEB31BE75D1100D18B4E /* SuperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEB21BE75D1100D18B4E /* SuperMock.swift */; };
-		630ACEB41BE75D1100D18B4E /* SuperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEB21BE75D1100D18B4E /* SuperMock.swift */; };
 		630ACEB61BE75ECC00D18B4E /* Mocks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEB51BE75ECC00D18B4E /* Mocks.plist */; };
 		630ACEB71BE75ECC00D18B4E /* Mocks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEB51BE75ECC00D18B4E /* Mocks.plist */; };
 		630ACEB81BE77D5800D18B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -26,8 +20,6 @@
 		630ACEBB1BE77F1C00D18B4E /* sample.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEB91BE77F1C00D18B4E /* sample.html */; };
 		630ACEBD1BE78CB600D18B4E /* samplePOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEBC1BE78CB600D18B4E /* samplePOST.html */; };
 		630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEBC1BE78CB600D18B4E /* samplePOST.html */; };
-		630ACEC01BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */; };
-		630ACEC11BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */; };
 		630ACEC91BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */; };
 		630ACED11BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
 		630ACED21BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
@@ -69,13 +61,9 @@
 		607FACE51AFB9204008FA782 /* SuperMock_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMock_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		630ACEAC1BE75BBE00D18B4E /* SuperMockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperMockURLProtocol.swift; path = ../SuperMockURLProtocol.swift; sourceTree = "<group>"; };
-		630ACEAF1BE75CEB00D18B4E /* SuperMockResponseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperMockResponseHelper.swift; path = ../SuperMockResponseHelper.swift; sourceTree = "<group>"; };
-		630ACEB21BE75D1100D18B4E /* SuperMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperMock.swift; path = ../SuperMock.swift; sourceTree = "<group>"; };
 		630ACEB51BE75ECC00D18B4E /* Mocks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mocks.plist; sourceTree = "<group>"; };
 		630ACEB91BE77F1C00D18B4E /* sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sample.html; sourceTree = "<group>"; };
 		630ACEBC1BE78CB600D18B4E /* samplePOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = samplePOST.html; sourceTree = "<group>"; };
-		630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperMockNSURLRequestExtension.swift; path = ../SuperMockNSURLRequestExtension.swift; sourceTree = "<group>"; };
 		630ACEC61BE7E1D200D18B4E /* SuperMock_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMock_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMock_ExampleUITests.swift; sourceTree = "<group>"; };
 		630ACECA1BE7E1D200D18B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +104,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				630ACEAB1BE75B9900D18B4E /* SuperMock */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SuperMock */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -188,17 +175,6 @@
 				3ED9E819E95AABB83D324B07 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		630ACEAB1BE75B9900D18B4E /* SuperMock */ = {
-			isa = PBXGroup;
-			children = (
-				630ACEAC1BE75BBE00D18B4E /* SuperMockURLProtocol.swift */,
-				630ACEAF1BE75CEB00D18B4E /* SuperMockResponseHelper.swift */,
-				630ACEB21BE75D1100D18B4E /* SuperMock.swift */,
-				630ACEBF1BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift */,
-			);
-			name = SuperMock;
 			sourceTree = "<group>";
 		};
 		630ACEC71BE7E1D200D18B4E /* SuperMock_ExampleUITests */ = {
@@ -469,12 +445,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630ACEB01BE75CEB00D18B4E /* SuperMockResponseHelper.swift in Sources */,
-				630ACEB31BE75D1100D18B4E /* SuperMock.swift in Sources */,
-				630ACEC01BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				630ACEAD1BE75BBE00D18B4E /* SuperMockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,12 +454,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630ACEB11BE75CEB00D18B4E /* SuperMockResponseHelper.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
-				630ACEC11BE79D1D00D18B4E /* SuperMockNSURLRequestExtension.swift in Sources */,
-				630ACEAE1BE75BBE00D18B4E /* SuperMockURLProtocol.swift in Sources */,
 				630ACEB81BE77D5800D18B4E /* AppDelegate.swift in Sources */,
-				630ACEB41BE75D1100D18B4E /* SuperMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +710,7 @@
 				630ACECF1BE7E1D200D18B4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
