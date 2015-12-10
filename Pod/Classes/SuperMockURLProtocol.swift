@@ -41,8 +41,68 @@ class SuperMockURLProtocol: NSURLProtocol {
             client?.URLProtocolDidFinishLoading(self)
         }
     }
-
+    
     override func stopLoading() {
     }
+}
+
+class SuperMockRecordingURLProtocol: NSURLProtocol {
     
+    var connection : NSURLConnection?
+    var mutableData : NSMutableData?
+    
+    override class func canInitWithRequest(request: NSURLRequest) -> Bool {
+        
+        if let _ = NSURLProtocol.propertyForKey("SuperMockRecordingURLProtocol", inRequest: request) {
+            return false
+        }
+        if SuperMockResponseHelper.sharedHelper.recording  {
+            return true
+        }
+        return false
+    }
+    
+    override class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+        return request
+    }
+    
+    override class func requestIsCacheEquivalent(a: NSURLRequest, toRequest b: NSURLRequest) -> Bool {
+        return super.requestIsCacheEquivalent(a, toRequest:b)
+    }
+    
+    override func startLoading() {
+        
+        if let copyRequest = request.mutableCopy() as? NSMutableURLRequest {
+            
+            NSURLProtocol.setProperty(request.URL!, forKey: "SuperMockRecordingURLProtocol", inRequest: copyRequest)
+            connection = NSURLConnection(request: copyRequest, delegate: self)
+            
+            mutableData = NSMutableData()
+        }
+    }
+    
+    override func stopLoading() {
+        connection?.cancel()
+    }
+}
+
+extension SuperMockRecordingURLProtocol: NSURLConnectionDataDelegate {
+    
+    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
+        client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: NSURLCacheStoragePolicy.NotAllowed)
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveData data: NSData) {
+        client?.URLProtocol(self, didLoadData: data)
+        mutableData?.appendData(data)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection) {
+        client?.URLProtocolDidFinishLoading(self)
+        SuperMockResponseHelper.sharedHelper.recordDataForRequest(mutableData, request: request)
+    }
+    
+    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+        client?.URLProtocol(self, didFailWithError: error)
+    }
 }

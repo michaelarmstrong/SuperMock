@@ -83,5 +83,24 @@ class Tests: XCTestCase {
         
         XCTAssert(mockRequest.URL!.fileURL, "fileURL mocked request should be returned when a mock is available.")
     }
+    
+    func testRecordDataAsMock() {
+        
+        let url = NSURL(string: "http://mike.kz/Daniele")!
+        let realRequest = NSURLRequest(URL: url)
+        
+        let responseString = "Something to put into the response field"
+        
+        let responseHelper = SuperMockResponseHelper.sharedHelper
+        let expectedData = responseString.dataUsingEncoding(NSUTF8StringEncoding)!
+        
+        responseHelper.recordDataForRequest(expectedData, request: realRequest)
+        
+        let mockRequest = responseHelper.mockRequest(realRequest)
+        let returnedData = responseHelper.responseForMockRequest(mockRequest)
+        
+        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+        
+    }
 
 }

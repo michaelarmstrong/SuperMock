@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // You could conditionally enable/disable this based on target macro.
         let appBundle = NSBundle(forClass: AppDelegate.self)
         SuperMock.beginMocking(appBundle)
+        //SuperMock.beginRecording(appBundle, policy: .Override)
             
         return true
     }
