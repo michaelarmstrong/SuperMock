@@ -177,7 +177,7 @@ class SuperMockResponseHelper: NSObject {
         let keyPath = "mocks.\(httpMethod)"
         if let mocks = definitions.valueForKeyPath(keyPath) as? NSMutableDictionary {
             
-            guard let _ = mocks["\(absoluteString)"] where recordPolicy == .Override else {
+            if let _ = mocks["\(absoluteString)"] where recordPolicy == .Record {
                 return
             }
             mocks["\(absoluteString)"] = responseFile
