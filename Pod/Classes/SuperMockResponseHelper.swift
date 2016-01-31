@@ -8,10 +8,17 @@
 
 import Foundation
 
+
+public enum RecordPolicy : String {
+    case Override = "Override"
+    case Record = "Record"
+}
+
 class SuperMockResponseHelper: NSObject {
     
     static let sharedHelper = SuperMockResponseHelper()
     let maxFileLegth = 30
+    var mocking = false
     
     class var bundleForMocks : NSBundle? {
         set {
@@ -44,11 +51,6 @@ class SuperMockResponseHelper: NSObject {
         case GET = "GET"
         case PUT = "PUT"
         case DELETE = "DELETE"
-    }
-    
-    enum RecordPolicy : String {
-        case Override = "Override"
-        case Record = "Record"
     }
     
     var recordPolicy = RecordPolicy.Record
