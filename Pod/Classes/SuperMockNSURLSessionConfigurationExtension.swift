@@ -10,8 +10,17 @@ import Foundation
 
 extension NSURLSessionConfiguration {
     
-    func addProtocols() {
+    public func addProtocols() {
         
-        self.protocolClasses = [SuperMockURLProtocol.self, SueprMockRecordingURLProtocol.self]
+        var protocolClasses = [AnyClass]()
+        if let protocols = self.protocolClasses {
+         protocolClasses.appendContentsOf(protocols)
+        }
+        if (SuperMockResponseHelper.sharedHelper.recording) {
+            protocolClasses.append(SuperMockRecordingURLProtocol.self)
+        }
+        if (SuperMockResponseHelper.sharedHelper.mocking) {
+            protocolClasses.append(SuperMockURLProtocol.self)
+        }
     }
 }
