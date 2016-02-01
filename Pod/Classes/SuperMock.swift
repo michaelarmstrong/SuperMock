@@ -39,6 +39,7 @@ public class SuperMock: NSObject {
         
         SuperMockResponseHelper.bundleForMocks = bundle
         SuperMockResponseHelper.sharedHelper.recording = true
+        SuperMockResponseHelper.sharedHelper.recordPolicy = policy
         
     }
     
