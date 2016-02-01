@@ -34,7 +34,10 @@ class SuperMockURLProtocol: NSURLProtocol {
             //  client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 
             let mimeType = SuperMockResponseHelper.sharedHelper.mimeType(request.URL!)
-            let response = NSURLResponse(URL: request.URL!, MIMEType: mimeType, expectedContentLength: mockData.length, textEncodingName: "utf8")
+            var response = NSURLResponse(URL: request.URL!, MIMEType: mimeType, expectedContentLength: mockData.length, textEncodingName: "utf8")
+            if let mockResponse = SuperMockResponseHelper.sharedHelper.mockResponse(request) {
+                response = mockResponse
+            }
             
             client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
             client?.URLProtocol(self, didLoadData: mockData)
@@ -89,6 +92,10 @@ class SuperMockRecordingURLProtocol: NSURLProtocol {
 extension SuperMockRecordingURLProtocol: NSURLConnectionDataDelegate {
     
     func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
+        if let httpResponse = response as? NSHTTPURLResponse {
+            let headers = httpResponse.allHeaderFields
+            SuperMockResponseHelper.sharedHelper.recordResponseHeadersForRequest(headers, request: request, response: httpResponse)
+        }
         client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: NSURLCacheStoragePolicy.NotAllowed)
     }
     
