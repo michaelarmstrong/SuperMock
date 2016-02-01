@@ -1,6 +1,6 @@
 {
   "name": "SuperMock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A very simple yet powerful UI and Unit testing HTTP mock framework. Lives in your app and runs offline.",
   "description": "A very simple yet powerful UI and Unit testing mock framework for API calls. It lives in your app and is completely offline. Setup your mocks at the start rather than on a per test basis.\nInspired by the need for MOCKS in UI tests without the hassle of setting up per class mocks and wanting something very portable and retro-compatible with any codebase.",
   "homepage": "https://github.com/michaelarmstrong/SuperMock",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/michaelarmstrong/SuperMock.git",
-    "tag": "0.1.0",
+    "tag": "0.1.1",
     "branch": "master"
   },
   "social_media_url": "https://twitter.com/ArmstrongAtWork",
