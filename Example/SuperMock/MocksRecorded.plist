@@ -20,7 +20,7 @@
 			<key>http://apple.com/</key>
 			<dict>
 				<key>data</key>
-				<string>2FDATA.html</string>
+				<string>http%3A%2F%2Fapple.com%2F2FDATA.txt</string>
 				<key>response</key>
 				<string>http%3A%2F%2Fapple.com%2F.txt</string>
 			</dict>
