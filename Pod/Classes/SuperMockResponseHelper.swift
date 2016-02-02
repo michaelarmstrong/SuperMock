@@ -245,10 +245,6 @@ class SuperMockResponseHelper: NSObject {
         
         let requestMethod = RequestMethod(rawValue: request.HTTPMethod!)!
         
-        let mockURL = mockURLForRequestURL(request.URL!, requestMethod: requestMethod, mocks: mocks)
-        if mockURL == request.URL {
-            return nil
-        }
         guard let mockedHeaderFields = mockedHeaderFields(request.URL!, requestMethod: requestMethod, mocks: mocks) else {
             return nil
         }
@@ -279,7 +275,7 @@ class SuperMockResponseHelper: NSObject {
     
     private func mockedHeaderFields(url: NSURL, requestMethod: RequestMethod, mocks: Dictionary<String,AnyObject>)->[String : String]? {
         
-        guard let mockedHeaderFieldsURL = mockURLForRequestRestponseURL(url, requestMethod: requestMethod, mocks: mocks) else {
+        guard let mockedHeaderFieldsURL = mockURLForRequestRestponseURL(url, requestMethod: requestMethod, mocks: mocks) where mockedHeaderFieldsURL != url else {
             return nil
         }
         guard let mockedHeaderFieldData = NSData(contentsOfURL: mockedHeaderFieldsURL) else {
