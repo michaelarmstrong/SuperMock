@@ -17,8 +17,10 @@ public enum RecordPolicy : String {
 class SuperMockResponseHelper: NSObject {
     
     static let sharedHelper = SuperMockResponseHelper()
-    let maxFileLegth = 30
+    private let maxFileLegth = 30
     var mocking = false
+    private let dataKey = "data"
+    private let responseKey = "response"
     
     class var bundleForMocks : NSBundle? {
         set {
@@ -112,18 +114,25 @@ class SuperMockResponseHelper: NSObject {
             fatalError("Couldn't find definitions for request: \(requestMethod) make sure to create a node for it in the plist")
         }
         
-        if let responseFile = definitionsForMethod[url.absoluteString] as? String {
+        if let responseFiles = definitionsForMethod[url.absoluteString] as? [String:String] {
             
-            if let responsePath = bundle?.pathForResource(responseFile, ofType: "") {
+            if let responseFile = responseFiles[dataKey], let responsePath = bundle?.pathForResource(responseFile, ofType: "") where isData {
                 return NSURL(fileURLWithPath: responsePath)
             }
-        }
-        if let responsePath = mockedResponseHeadersFilePath(url) where !isData {
-            return NSURL(fileURLWithPath: responsePath)
-        }
-        
-        if let responsePath = mockedResponseFilePath(url) where isData {
-            return NSURL(fileURLWithPath: responsePath)
+            
+            if let responseFile = responseFiles[responseKey], let responsePath = bundle?.pathForResource(responseFile, ofType: "") where !isData {
+                return NSURL(fileURLWithPath: responsePath)
+            }
+            
+        } else {
+            
+            if let responsePath = mockedResponseHeadersFilePath(url) where !isData && NSFileManager.defaultManager().fileExistsAtPath(responsePath) {
+                return NSURL(fileURLWithPath: responsePath)
+            }
+            
+            if let responsePath = mockedResponseFilePath(url) where isData && NSFileManager.defaultManager().fileExistsAtPath(responsePath){
+                return NSURL(fileURLWithPath: responsePath)
+            }
         }
         return url
     }
@@ -183,7 +192,7 @@ class SuperMockResponseHelper: NSObject {
         guard let url = request.URL else {
             return
         }
-        recordResponseForRequest(data, request: request, responseFile: mockedResponseFileName(url), responsePath: mockedResponseFilePath(url))
+        recordResponseForRequest(data, request: request, responseFile: mockedResponseFileName(url), responsePath: mockedResponseFilePath(url), key: dataKey)
     }
     
     private func recordResponseHeadersDataForRequest(data: NSData?, request: NSURLRequest) {
@@ -191,10 +200,10 @@ class SuperMockResponseHelper: NSObject {
         guard let url = request.URL else {
             return
         }
-        recordResponseForRequest(data, request: request, responseFile: mockedResponseHeadersFileName(url), responsePath: mockedResponseHeadersFilePath(url))
+        recordResponseForRequest(data, request: request, responseFile: mockedResponseHeadersFileName(url), responsePath: mockedResponseHeadersFilePath(url), key: responseKey)
     }
     
-    private func recordResponseForRequest(data: NSData?, request: NSURLRequest, responseFile: String?, responsePath: String?) {
+    private func recordResponseForRequest(data: NSData?, request: NSURLRequest, responseFile: String?, responsePath: String?, key: String) {
         
         guard let definitionsPath = mockFileOutOfBundle(),
             let definitions = NSMutableDictionary(contentsOfFile: definitionsPath),
@@ -212,7 +221,12 @@ class SuperMockResponseHelper: NSObject {
             if let _ = mocks["\(absoluteString)"] where recordPolicy == .Record {
                 return
             }
-            mocks["\(absoluteString)"] = responseFile
+            
+            if let mock = mocks["\(absoluteString)"] as? NSMutableDictionary {
+                mock[key] = responseFile
+            } else {
+                mocks["\(absoluteString)"] = [key:responseFile]
+            }
             
             if !definitions.writeToFile(definitionsPath, atomically: true) {
                 print("Error writning the file, permission problems?")
@@ -220,6 +234,13 @@ class SuperMockResponseHelper: NSObject {
         }
     }
     
+    /**
+     Return the mock HTTP Response based on the saved HTTP Headers into the specific file, it create the response with the previous Response header
+     
+     - parameter request: Represent the request (orginal not mocked) callled for obtain the data
+     
+     - returns: Mocked response set with the HTTPHEaders of the response recorded
+     */
     func mockResponse(request: NSURLRequest) -> NSURLResponse? {
         
         let requestMethod = RequestMethod(rawValue: request.HTTPMethod!)!
@@ -241,6 +262,13 @@ class SuperMockResponseHelper: NSObject {
         return mockedResponse
     }
     
+    /**
+     Record the headers Dictionary of a specific Response, in this way if the code that use the mock check the Response headers it can have them recorded as well. It save in the dictionary the Response status code as well
+     
+     - parameter headers:  Dictionary of the headers to save, obtained from the NSHTTPURLResponse.allHeaderFileds
+     - parameter request:  Represent the request (orginal not mocked) callled for obtain the data
+     - parameter response: The current response, it is used to store the status code
+     */
     func recordResponseHeadersForRequest(headers:[NSObject:AnyObject], request: NSURLRequest, response: NSHTTPURLResponse) {
         
         var headersModified : [NSObject:AnyObject] = headers
@@ -324,7 +352,7 @@ extension SuperMockResponseHelper {
         guard let fileName = urlString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) else {
             fatalError("You must provide a request with a valid URL")
         }
-        if isData {
+        if isData && recording {
             return  fileName + "DATA." + fileType(mimeType(url))
         }
         return  fileName + "." + fileType(mimeType(url))
