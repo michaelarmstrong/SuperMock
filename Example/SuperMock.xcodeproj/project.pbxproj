@@ -24,9 +24,9 @@
 		630ACEBD1BE78CB600D18B4E /* samplePOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEBC1BE78CB600D18B4E /* samplePOST.html */; };
 		630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 630ACEBC1BE78CB600D18B4E /* samplePOST.html */; };
 		630ACEC91BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */; };
-		630ACED11BE7E39400D18B4E /* buttonsDATA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttonsDATA.txt */; };
-		630ACED21BE7E39400D18B4E /* buttonsDATA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttonsDATA.txt */; };
-		630ACED31BE7E39400D18B4E /* buttonsDATA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttonsDATA.txt */; };
+		630ACED11BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
+		630ACED21BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
+		630ACED31BE7E39400D18B4E /* buttons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 630ACED01BE7E39400D18B4E /* buttons.txt */; };
 		879ED7B2F71E032A8114F582 /* Pods_SuperMock_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E483D97D007BA7B53B0EE3A /* Pods_SuperMock_Tests.framework */; };
 		AD2C93C9D0845BBC4ECE7F7D /* Pods_SuperMock_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4B020307AD9440E13068F0 /* Pods_SuperMock_Example.framework */; };
 /* End PBXBuildFile section */
@@ -73,7 +73,7 @@
 		630ACEC61BE7E1D200D18B4E /* SuperMock_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMock_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630ACEC81BE7E1D200D18B4E /* SuperMock_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMock_ExampleUITests.swift; sourceTree = "<group>"; };
 		630ACECA1BE7E1D200D18B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		630ACED01BE7E39400D18B4E /* buttonsDATA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buttonsDATA.txt; sourceTree = "<group>"; };
+		630ACED01BE7E39400D18B4E /* buttons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buttons.txt; sourceTree = "<group>"; };
 		710EF85D42E5856CA0778706 /* Pods-SuperMock_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMock_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMock_Example/Pods-SuperMock_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4B020307AD9440E13068F0 /* Pods_SuperMock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05ABBA08000628BBF58ECD1 /* SuperMock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperMock.podspec; path = ../SuperMock.podspec; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				630ACEB51BE75ECC00D18B4E /* Mocks.plist */,
 				630ACEBC1BE78CB600D18B4E /* samplePOST.html */,
 				630ACEB91BE77F1C00D18B4E /* sample.html */,
-				630ACED01BE7E39400D18B4E /* buttonsDATA.txt */,
+				630ACED01BE7E39400D18B4E /* buttons.txt */,
 				225140E31C5FDDF40025A4A9 /* Recorded */,
 			);
 			name = Mocks;
@@ -349,7 +349,7 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				630ACEB61BE75ECC00D18B4E /* Mocks.plist in Resources */,
 				630ACEBA1BE77F1C00D18B4E /* sample.html in Resources */,
-				630ACED11BE7E39400D18B4E /* buttonsDATA.txt in Resources */,
+				630ACED11BE7E39400D18B4E /* buttons.txt in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +361,7 @@
 				630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */,
 				630ACEBB1BE77F1C00D18B4E /* sample.html in Resources */,
 				630ACEB71BE75ECC00D18B4E /* Mocks.plist in Resources */,
-				630ACED21BE7E39400D18B4E /* buttonsDATA.txt in Resources */,
+				630ACED21BE7E39400D18B4E /* buttons.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630ACED31BE7E39400D18B4E /* buttonsDATA.txt in Resources */,
+				630ACED31BE7E39400D18B4E /* buttons.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
