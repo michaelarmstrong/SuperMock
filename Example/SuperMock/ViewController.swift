@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     
     @IBAction func performRealRequest(sender: AnyObject) {
         
-        let realURL = NSURL(string: "http://apple.com/")!
+        let realURL = NSURL(string: "https://developer.apple.com")!
         let requestToMock = NSURLRequest(URL: realURL)
         
         let task = urlSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
