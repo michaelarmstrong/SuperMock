@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		041FC809EEF5F406B25258B40BE41EBF /* Pods-SuperMock_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7766EAC374A81945575E361A10F653 /* Pods-SuperMock_Example-dummy.m */; };
-		07F6C541F6A90A132F882F84D005192C /* SuperMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20108985D215E92DEA34FC9B2FBE9F99 /* SuperMockURLProtocol.swift */; };
-		2224F9361C58ED8300FC042C /* SuperMockNSURLSessionConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224F9351C58ED8300FC042C /* SuperMockNSURLSessionConfigurationExtension.swift */; };
-		3D0161659D07BCD4A8266A9AEB5FB496 /* SuperMock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7472B08AF77E2D04268ED993226488 /* SuperMock-dummy.m */; };
+		45E38FB6F1EF438E9397E6B2B59F0219 /* SuperMockResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F797FC003069D58BFAD7BE88FFEE9C /* SuperMockResponseHelper.swift */; };
 		5608F20D99E0DA4B99444243648F2315 /* SuperMock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB56D87062EB2F0559F5CFC6DEC768C3 /* SuperMock.bundle */; };
 		57699592FF4B3A56598D697A25DC1FE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		656B9C5B52C6D12AA4F9F08225B3ACD0 /* SuperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C68240B8EC5EC1395EBF4A78EA6284 /* SuperMock.swift */; };
 		72F27E2D53ED71C35191A9BD55982957 /* Pods-SuperMock_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A07BE47AC9CA86745B5EAE78986E6DA /* Pods-SuperMock_Tests-dummy.m */; };
+		7713C4C1A6A466446A5A47A16BAF09B1 /* SuperMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26511C91A9C6742C0CE6FA0342B42DF6 /* SuperMockURLProtocol.swift */; };
 		7C91405EA9F7BA69C9A17FEA541C66AB /* Pods-SuperMock_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AC8A63603B97C4A82D07D84C9D7E89 /* Pods-SuperMock_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A0D6C04673E08E09E44564FB1D08EB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		8DF0C4E722B2EA242B35FCD0A5662AEB /* SuperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89D57D4E28B895A5E076C31F490D4A /* SuperMock.swift */; };
+		97EEC9D461F55599906316B87F46A0BF /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46057125CEA354E12CF642880ACD01 /* SuperMockNSURLRequestExtension.swift */; };
+		985369ACB130CF16FC1BD8CBF1DE573C /* SuperMockNSURLSessionConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD79DAA02DD71542E58BAE01E1116B /* SuperMockNSURLSessionConfigurationExtension.swift */; };
 		9CE0B2A738C628968559EF9556EC6193 /* SuperMock-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71B0C888F973570A71E22F2E71D44821 /* SuperMock-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE13EA1099398CF058B597D3AA1C3A19 /* SuperMockResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A10D0A4A58BED21B143B790FC09331 /* SuperMockResponseHelper.swift */; };
 		BE27DBA95929F4FDD2845F571FB2C306 /* Pods-SuperMock_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE3BBF79153AAF2D16FA3BB6610C497 /* Pods-SuperMock_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D158E85B10C73F8E70F2069A3F4CD612 /* SuperMockNSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CE231CF343AF568D0441D61C36D1D /* SuperMockNSURLRequestExtension.swift */; };
 		E49940150B8DBA6347E67072A15C9C71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		EA653EEE4A9063AC4294884B9BFCA5E9 /* SuperMock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7472B08AF77E2D04268ED993226488 /* SuperMock-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,39 +51,39 @@
 /* Begin PBXFileReference section */
 		0128C7F0151D5A56098D2B5ACB88FC97 /* Pods-SuperMock_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperMock_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		019427F58B1F06091D24092A822BA2FC /* Pods-SuperMock_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperMock_Tests-resources.sh"; sourceTree = "<group>"; };
-		08C68240B8EC5EC1395EBF4A78EA6284 /* SuperMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMock.swift; sourceTree = "<group>"; };
 		0AD2044C46174374B051454D3052861F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149BE0978E8685E29E1A8D687282E89F /* Pods-SuperMock_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SuperMock_Tests.modulemap"; sourceTree = "<group>"; };
 		1B40AE483FC4EE6D7ADDBB5E1033326C /* SuperMock.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SuperMock.modulemap; sourceTree = "<group>"; };
-		20108985D215E92DEA34FC9B2FBE9F99 /* SuperMockURLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockURLProtocol.swift; sourceTree = "<group>"; };
-		2224F9351C58ED8300FC042C /* SuperMockNSURLSessionConfigurationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperMockNSURLSessionConfigurationExtension.swift; sourceTree = "<group>"; };
+		26511C91A9C6742C0CE6FA0342B42DF6 /* SuperMockURLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockURLProtocol.swift; sourceTree = "<group>"; };
 		26D6695E015CB8AC3D8E679440D24E8D /* Pods-SuperMock_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperMock_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2968D28169058F6C83DDB749E6DCB423 /* Pods-SuperMock_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperMock_Example.release.xcconfig"; sourceTree = "<group>"; };
 		29AF02CEEBCE51DDC5F5416B3042560A /* SuperMock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SuperMock.xcconfig; sourceTree = "<group>"; };
 		2D9B16F18E45D7FE7EF08656C2DFD314 /* Pods-SuperMock_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperMock_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		34F1DEE9F953486A1C666E813C390B53 /* Pods-SuperMock_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperMock_Example-frameworks.sh"; sourceTree = "<group>"; };
-		354CE231CF343AF568D0441D61C36D1D /* SuperMockNSURLRequestExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockNSURLRequestExtension.swift; sourceTree = "<group>"; };
 		36AC8A63603B97C4A82D07D84C9D7E89 /* Pods-SuperMock_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperMock_Tests-umbrella.h"; sourceTree = "<group>"; };
 		36BA2DCBA2822DC2C7F8846DCAAD0F65 /* Pods-SuperMock_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperMock_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		45A10D0A4A58BED21B143B790FC09331 /* SuperMockResponseHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockResponseHelper.swift; sourceTree = "<group>"; };
 		46C4701EB0B24F4215AFA65B6D46A473 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED4451CF478026A43F5735E99CBFC57 /* Pods-SuperMock_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperMock_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5A07BE47AC9CA86745B5EAE78986E6DA /* Pods-SuperMock_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperMock_Tests-dummy.m"; sourceTree = "<group>"; };
+		5D89D57D4E28B895A5E076C31F490D4A /* SuperMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMock.swift; sourceTree = "<group>"; };
 		634D25AFB245B388F5FD212AC68E5499 /* Pods_SuperMock_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A61A3BDAC57EDFCC7DBCCE9F2A420 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6461E928EF7FE3C172947761BFFF26D6 /* Pods-SuperMock_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SuperMock_Example.modulemap"; sourceTree = "<group>"; };
 		6E7766EAC374A81945575E361A10F653 /* Pods-SuperMock_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperMock_Example-dummy.m"; sourceTree = "<group>"; };
 		71B0C888F973570A71E22F2E71D44821 /* SuperMock-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperMock-umbrella.h"; sourceTree = "<group>"; };
 		7F6EA0CC4B1FC43A1D5F1B54DB9A0BCB /* Pods-SuperMock_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperMock_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		94F797FC003069D58BFAD7BE88FFEE9C /* SuperMockResponseHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockResponseHelper.swift; sourceTree = "<group>"; };
 		9543D86E35EE14EFB5175B4F72B8DA3E /* Pods-SuperMock_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperMock_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AAE3BBF79153AAF2D16FA3BB6610C497 /* Pods-SuperMock_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperMock_Example-umbrella.h"; sourceTree = "<group>"; };
 		B4B7096BCB72BDBE1E577FCAFFDA0857 /* SuperMock-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperMock-prefix.pch"; sourceTree = "<group>"; };
+		B7CD79DAA02DD71542E58BAE01E1116B /* SuperMockNSURLSessionConfigurationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockNSURLSessionConfigurationExtension.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C3EB1D5B2BA2D27CCDF123CF0951B9E6 /* Pods_SuperMock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D484779065789E148150C372B2E22436 /* Pods-SuperMock_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperMock_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DB56D87062EB2F0559F5CFC6DEC768C3 /* SuperMock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA0D3BBC7F07BD7455C22086651965A /* SuperMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA46057125CEA354E12CF642880ACD01 /* SuperMockNSURLRequestExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperMockNSURLRequestExtension.swift; sourceTree = "<group>"; };
 		FA7472B08AF77E2D04268ED993226488 /* SuperMock-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperMock-dummy.m"; sourceTree = "<group>"; };
 		FC5E21212ADBDBAA8719BDBAEBFBC9BE /* Pods-SuperMock_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperMock_Example-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,10 +155,10 @@
 			path = "Example/Pods/Target Support Files/SuperMock";
 			sourceTree = "<group>";
 		};
-		6EAF2C604153584FC4839FBF911CDB62 /* Pod */ = {
+		3FAF7404836B842234B06995940687D3 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D26F49EC63DECA355E2A05C094DD01A1 /* Classes */,
+				A19FE170B32AFC4A7CF1169C4EE19AB9 /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -177,11 +177,23 @@
 		9BB7FB432F3B94E52877A5A81A756236 /* SuperMock */ = {
 			isa = PBXGroup;
 			children = (
-				6EAF2C604153584FC4839FBF911CDB62 /* Pod */,
+				3FAF7404836B842234B06995940687D3 /* Pod */,
 				34AFEABC10C2C0B87CCF6FF64B98D96D /* Support Files */,
 			);
 			name = SuperMock;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		A19FE170B32AFC4A7CF1169C4EE19AB9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5D89D57D4E28B895A5E076C31F490D4A /* SuperMock.swift */,
+				FA46057125CEA354E12CF642880ACD01 /* SuperMockNSURLRequestExtension.swift */,
+				B7CD79DAA02DD71542E58BAE01E1116B /* SuperMockNSURLSessionConfigurationExtension.swift */,
+				94F797FC003069D58BFAD7BE88FFEE9C /* SuperMockResponseHelper.swift */,
+				26511C91A9C6742C0CE6FA0342B42DF6 /* SuperMockURLProtocol.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -206,18 +218,6 @@
 				9BB7FB432F3B94E52877A5A81A756236 /* SuperMock */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		D26F49EC63DECA355E2A05C094DD01A1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				08C68240B8EC5EC1395EBF4A78EA6284 /* SuperMock.swift */,
-				354CE231CF343AF568D0441D61C36D1D /* SuperMockNSURLRequestExtension.swift */,
-				45A10D0A4A58BED21B143B790FC09331 /* SuperMockResponseHelper.swift */,
-				20108985D215E92DEA34FC9B2FBE9F99 /* SuperMockURLProtocol.swift */,
-				2224F9351C58ED8300FC042C /* SuperMockNSURLSessionConfigurationExtension.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		D842DE37CFDD6F5D48350DE0AF4186B3 /* Products */ = {
@@ -292,7 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 716C1D6C764C0580FE8D0E178358B78A /* Build configuration list for PBXNativeTarget "SuperMock" */;
 			buildPhases = (
-				582BC38238349249BC8A83BEB0D4ADF5 /* Sources */,
+				E3C865C40A0DB0814DFB8D5A9791513A /* Sources */,
 				1812D0E49D465CC94F7D8D4B5385C858 /* Frameworks */,
 				A4BC3C68E629F05E077F3B8C1B437146 /* Resources */,
 				033ECD300830B92635A3DC5F80EC5D1F /* Headers */,
@@ -366,7 +366,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -412,20 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2224F9361C58ED8300FC042C /* SuperMockNSURLSessionConfigurationExtension.swift in Sources */,
 				041FC809EEF5F406B25258B40BE41EBF /* Pods-SuperMock_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		582BC38238349249BC8A83BEB0D4ADF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D0161659D07BCD4A8266A9AEB5FB496 /* SuperMock-dummy.m in Sources */,
-				656B9C5B52C6D12AA4F9F08225B3ACD0 /* SuperMock.swift in Sources */,
-				D158E85B10C73F8E70F2069A3F4CD612 /* SuperMockNSURLRequestExtension.swift in Sources */,
-				AE13EA1099398CF058B597D3AA1C3A19 /* SuperMockResponseHelper.swift in Sources */,
-				07F6C541F6A90A132F882F84D005192C /* SuperMockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +428,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F27E2D53ED71C35191A9BD55982957 /* Pods-SuperMock_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3C865C40A0DB0814DFB8D5A9791513A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA653EEE4A9063AC4294884B9BFCA5E9 /* SuperMock-dummy.m in Sources */,
+				8DF0C4E722B2EA242B35FCD0A5662AEB /* SuperMock.swift in Sources */,
+				97EEC9D461F55599906316B87F46A0BF /* SuperMockNSURLRequestExtension.swift in Sources */,
+				985369ACB130CF16FC1BD8CBF1DE573C /* SuperMockNSURLSessionConfigurationExtension.swift in Sources */,
+				45E38FB6F1EF438E9397E6B2B59F0219 /* SuperMockResponseHelper.swift in Sources */,
+				7713C4C1A6A466446A5A47A16BAF09B1 /* SuperMockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +509,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SuperMock/SuperMock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SuperMock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -571,7 +570,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/SuperMock/SuperMock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SuperMock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -675,7 +673,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2968D28169058F6C83DDB749E6DCB423 /* Pods-SuperMock_Example.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -718,7 +715,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D484779065789E148150C372B2E22436 /* Pods-SuperMock_Example.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

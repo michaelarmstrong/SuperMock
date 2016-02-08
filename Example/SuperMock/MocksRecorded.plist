@@ -17,6 +17,13 @@
 		<dict/>
 		<key>GET</key>
 		<dict>
+			<key>http://apple.com/</key>
+			<dict>
+				<key>data</key>
+				<string>http%3A%2F%2Fapple.com%2F2FDATA.txt</string>
+				<key>response</key>
+				<string>http%3A%2F%2Fapple.com%2F.txt</string>
+			</dict>
 			<key>http://mike.kz/api/layout/buttons/</key>
 			<dict>
 				<key>data</key>
