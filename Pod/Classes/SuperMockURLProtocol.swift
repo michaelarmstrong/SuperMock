@@ -22,19 +22,23 @@ class SuperMockURLProtocol: NSURLProtocol {
     
     
     override class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
-        return SuperMockResponseHelper.sharedHelper.mockRequest(request)
+        return request
     }
 
     override func startLoading() {
-                
-        if let mockData = SuperMockResponseHelper.sharedHelper.responseForMockRequest(request) {
+        
+        let mockedRequest = SuperMockResponseHelper.sharedHelper.mockRequest(request)
+        if let mockData = SuperMockResponseHelper.sharedHelper.responseForMockRequest(mockedRequest) {
    
             //TODO: Fix up the below for use in UIWebView's.
             //      let response = NSHTTPURLResponse(URL: request.URL!, statusCode: 302, HTTPVersion: "HTTP/1.1", headerFields: ["Location":request.URL!.absoluteString])!
             //  client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 
-            let mimeType = SuperMockResponseHelper.sharedHelper.mimeType(request.URL!)
-            let response = NSURLResponse(URL: request.URL!, MIMEType: mimeType, expectedContentLength: mockData.length, textEncodingName: "utf8")
+            let mimeType = SuperMockResponseHelper.sharedHelper.mimeType(mockedRequest.URL!)
+            var response = NSURLResponse(URL: mockedRequest.URL!, MIMEType: mimeType, expectedContentLength: mockData.length, textEncodingName: "utf8")
+            if let mockResponse = SuperMockResponseHelper.sharedHelper.mockResponse(request) {
+                response = mockResponse
+            }
             
             client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
             client?.URLProtocol(self, didLoadData: mockData)
@@ -89,6 +93,10 @@ class SuperMockRecordingURLProtocol: NSURLProtocol {
 extension SuperMockRecordingURLProtocol: NSURLConnectionDataDelegate {
     
     func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
+        if let httpResponse = response as? NSHTTPURLResponse {
+            let headers = httpResponse.allHeaderFields
+            SuperMockResponseHelper.sharedHelper.recordResponseHeadersForRequest(headers, request: request, response: httpResponse)
+        }
         client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: NSURLCacheStoragePolicy.NotAllowed)
     }
     
