@@ -26,12 +26,17 @@
 			<dict>
 				<key>data</key>
 				<string>sample.html</string>
+				<key>response</key>
+				<string>__mike.kz_.headers</string>
 			</dict>
 		</dict>
 		<key>POST</key>
 		<dict>
 			<key>http://mike.kz/</key>
-			<string>samplePOST.html</string>
+			<dict>
+				<key>data</key>
+				<string>samplePOST.html</string>
+			</dict>
 		</dict>
 		<key>PUT</key>
 		<dict/>
