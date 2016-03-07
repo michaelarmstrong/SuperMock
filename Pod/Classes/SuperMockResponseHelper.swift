@@ -345,7 +345,7 @@ extension FileHelper {
             return mockPath
         }
         
-        var mockDictionary = NSDictionary(dictionary:["mimes":[["htm":"text/html","html":"text/html"],["json":"application/json"]],"mocks":["DELETE":["http://exampleUrl":["data":"","resonse":""]],"POST":["http://exampleUrl":["data":"","resonse":""]],"PUT":["http://exampleUrl":["data":"","resonse":""]],"GET":["http://exampleUrl":["data":"","resonse":""]]]])
+        var mockDictionary = NSDictionary(dictionary:["mimes":["htm":"text/html","html":"text/html","json":"application/json"],"mocks":["DELETE":["http://exampleUrl":["data":"","resonse":""]],"POST":["http://exampleUrl":["data":"","resonse":""]],"PUT":["http://exampleUrl":["data":"","resonse":""]],"GET":["http://exampleUrl":["data":"","resonse":""]]]])
         
         if let definitionsPath = bundle.pathForResource(SuperMockResponseHelper.sharedHelper.mocksFile, ofType: "plist"),
             let definitions = NSMutableDictionary(contentsOfFile: definitionsPath) {
