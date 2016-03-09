@@ -94,10 +94,12 @@ class SuperMockResponseHelper: NSObject {
      - returns: NSURLRequest with manipulated resource identifier.
      */
     func mockRequest(request: NSURLRequest) -> NSURLRequest {
-        
+        guard let url = request.URL else {
+            return request
+        }
         let requestMethod = RequestMethod(rawValue: request.HTTPMethod!)!
         
-        let mockURL = mockURLForRequestURL(request.URL!, requestMethod: requestMethod, mocks: mocks)
+        let mockURL = mockURLForRequestURL(url, requestMethod: requestMethod, mocks: mocks)
         if mockURL == request.URL {
             return request
         }
@@ -124,7 +126,7 @@ class SuperMockResponseHelper: NSObject {
     private func mockURLForRequestURL(url: NSURL, requestMethod: RequestMethod, mocks: Dictionary<String,AnyObject>, isData: Bool) -> NSURL? {
         
         guard let definitionsForMethod = mocks[requestMethod.rawValue] as? Dictionary<String,AnyObject> else {
-            fatalError("Couldn't find definitions for request: \(requestMethod) make sure to create a node for it in the plist")
+            fatalError("Couldn't find definitions for request: \(requestMethod) make sure to create a node for it in the plist and include your plist file in the correct target")
         }
         
         if let responseFiles = definitionsForMethod[url.absoluteString] as? [String:String] {
@@ -306,7 +308,7 @@ class SuperMockResponseHelper: NSObject {
 
 class FileHelper {
     
-    private static let maxFileLegth = 50
+    private static let maxFileLegth = 70
 }
 
 //MARK: public methods
