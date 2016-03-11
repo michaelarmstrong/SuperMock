@@ -10,6 +10,8 @@
 		225140E71C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F.txt in Resources */ = {isa = PBXBuildFile; fileRef = 225140E41C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F.txt */; };
 		225140E81C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F2FDATA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 225140E51C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F2FDATA.txt */; };
 		225140E91C5FDE6A0025A4A9 /* MocksRecorded.plist in Resources */ = {isa = PBXBuildFile; fileRef = 225140E61C5FDE6A0025A4A9 /* MocksRecorded.plist */; };
+		22E2A6511C8A59AC006F7534 /* __mike.kz_.headers in Resources */ = {isa = PBXBuildFile; fileRef = 22E2A6501C8A59AC006F7534 /* __mike.kz_.headers */; };
+		22E2A6521C8A5AD7006F7534 /* __mike.kz_.headers in Resources */ = {isa = PBXBuildFile; fileRef = 22E2A6501C8A59AC006F7534 /* __mike.kz_.headers */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -54,6 +56,7 @@
 		225140E41C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "http%3A%2F%2Fapple.com%2F.txt"; sourceTree = "<group>"; };
 		225140E51C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F2FDATA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "http%3A%2F%2Fapple.com%2F2FDATA.txt"; sourceTree = "<group>"; };
 		225140E61C5FDE6A0025A4A9 /* MocksRecorded.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MocksRecorded.plist; sourceTree = "<group>"; };
+		22E2A6501C8A59AC006F7534 /* __mike.kz_.headers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = __mike.kz_.headers; sourceTree = "<group>"; };
 		3ED9E819E95AABB83D324B07 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4DB89E890B28C1A921A71510 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		53F19A3FC83CA086C3996AA0 /* Pods-SuperMock_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMock_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperMock_Example/Pods-SuperMock_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		22419E091C61245800F8A9EF /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				22E2A6501C8A59AC006F7534 /* __mike.kz_.headers */,
 				630ACEB51BE75ECC00D18B4E /* Mocks.plist */,
 				630ACEBC1BE78CB600D18B4E /* samplePOST.html */,
 				630ACEB91BE77F1C00D18B4E /* sample.html */,
@@ -300,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -345,6 +349,7 @@
 				225140E81C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F2FDATA.txt in Resources */,
 				630ACEBD1BE78CB600D18B4E /* samplePOST.html in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				22E2A6511C8A59AC006F7534 /* __mike.kz_.headers in Resources */,
 				225140E71C5FDE6A0025A4A9 /* http%3A%2F%2Fapple.com%2F.txt in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				630ACEB61BE75ECC00D18B4E /* Mocks.plist in Resources */,
@@ -361,6 +366,7 @@
 				630ACEBE1BE78CB600D18B4E /* samplePOST.html in Resources */,
 				630ACEBB1BE77F1C00D18B4E /* sample.html in Resources */,
 				630ACEB71BE75ECC00D18B4E /* Mocks.plist in Resources */,
+				22E2A6521C8A5AD7006F7534 /* __mike.kz_.headers in Resources */,
 				630ACED21BE7E39400D18B4E /* buttons.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +557,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -596,6 +603,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -616,6 +624,7 @@
 			baseConfigurationReference = 710EF85D42E5856CA0778706 /* Pods-SuperMock_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = SuperMock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -629,6 +638,7 @@
 			baseConfigurationReference = 53F19A3FC83CA086C3996AA0 /* Pods-SuperMock_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = SuperMock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -642,6 +652,7 @@
 			baseConfigurationReference = 1720BFF65970BD47BA847A35 /* Pods-SuperMock_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -652,6 +663,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.SuperMock.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperMock_Example.app/SuperMock_Example";
 			};
@@ -662,12 +674,14 @@
 			baseConfigurationReference = F4C5C6D0D9AEB8477DCD2E75 /* Pods-SuperMock_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.SuperMock.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperMock_Example.app/SuperMock_Example";
 			};

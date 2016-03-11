@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Connection</key>
+	<string>Keep-Alive</string>
+	<key>Content-Type</key>
+	<string>text/html; charset=UTF-8</string>
+	<key>Date</key>
+	<string>Fri, 04 Mar 2016 16:09:26 GMT</string>
+	<key>Keep-Alive</key>
+	<string>timeout=5, max=99</string>
+	<key>Server</key>
+	<string>Apache/2.4.9 (Unix) OpenSSL/1.0.1e-fips mod_bwlimited/1.4</string>
+	<key>Transfer-Encoding</key>
+	<string>Identity</string>
+	<key>X-Pingback</key>
+	<string>http://mike.kz/xmlrpc.php</string>
+	<key>X-Powered-By</key>
+	<string>PHP/5.4.30</string>
+	<key>status</key>
+	<string>200</string>
+</dict>
+</plist>
