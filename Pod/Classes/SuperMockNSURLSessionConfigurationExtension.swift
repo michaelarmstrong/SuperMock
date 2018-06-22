@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSURLSessionConfiguration {
+extension URLSessionConfiguration {
     
     public func addProtocols() {
         
@@ -21,7 +21,7 @@ extension NSURLSessionConfiguration {
             protocolClasses.append(SuperMockURLProtocol.self)
         }
         if let protocols = self.protocolClasses {
-            protocolClasses.appendContentsOf(protocols)
+            protocolClasses.append(contentsOf: protocols)
         }
         self.protocolClasses = protocolClasses
     }

@@ -7,31 +7,31 @@ class Tests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        SuperMock.beginMocking(NSBundle(forClass: AppDelegate.self))
+       // SuperMock.beginMocking(Bundle(for: AppDelegate.self))
     }
     
     override func tearDown() {
         super.tearDown()
         
-        SuperMock.endMocking()
+       // SuperMock.endMocking()
     }
     
     func testValidGETRequestWithMockReturnsExpectedMockedData() {
         
         let responseHelper = SuperMockResponseHelper.sharedHelper
         
-        let url = NSURL(string: "http://mike.kz/")!
-        let realRequest = NSMutableURLRequest(URL: url)
-        realRequest.HTTPMethod = "GET"
+        let url = URL(string: "http://mike.kz/")!
+        var realRequest = URLRequest(url: url)
+        realRequest.httpMethod = "GET"
         let mockRequest = responseHelper.mockRequest(realRequest)
         
-        let bundle = NSBundle(forClass: AppDelegate.self)
-        let pathToExpectedData = bundle.pathForResource("sample", ofType: "html")!
+        let bundle = Bundle(for: AppDelegate.self)
+        let pathToExpectedData = bundle.path(forResource: "sample", ofType: "html")!
 
-        let expectedData = NSData(contentsOfFile: pathToExpectedData)
+        let expectedData = try! NSData(contentsOfFile: pathToExpectedData) as Data
         let returnedData = responseHelper.responseForMockRequest(mockRequest)
         
-        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+        XCTAssertEqual(expectedData, returnedData, "Expected data not received for mock.")
 
     }
     
@@ -39,26 +39,26 @@ class Tests: XCTestCase {
         
         let responseHelper = SuperMockResponseHelper.sharedHelper
         
-        let url = NSURL(string: "http://mike.kz/")!
-        let realRequest = NSMutableURLRequest(URL: url)
-        realRequest.HTTPMethod = "POST"
+        let url = URL(string: "http://mike.kz/")!
+        var realRequest = URLRequest(url: url)
+        realRequest.httpMethod = "POST"
         let mockRequest = responseHelper.mockRequest(realRequest)
         
-        let bundle = NSBundle(forClass: AppDelegate.self)
-        let pathToExpectedData = bundle.pathForResource("samplePOST", ofType: "html")!
+        let bundle = Bundle(for: AppDelegate.self)
+        let pathToExpectedData = bundle.path(forResource: "samplePOST", ofType: "html")!
         
-        let expectedData = NSData(contentsOfFile: pathToExpectedData)
+        let expectedData = try! NSData(contentsOfFile: pathToExpectedData) as Data
         let returnedData = responseHelper.responseForMockRequest(mockRequest)
         
-        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+        XCTAssertEqual(expectedData, returnedData, "Expected data not received for mock.")
         
     }
     
     func testValidRequestWithNoMockReturnsOriginalRequest() {
         let responseHelper = SuperMockResponseHelper.sharedHelper
         
-        let url = NSURL(string: "http://nomockavailable.com")!
-        let realRequest = NSURLRequest(URL: url)
+        let url = URL(string: "http://nomockavailable.com")!
+        let realRequest = URLRequest(url: url)
         let mockRequest = responseHelper.mockRequest(realRequest)
         
         XCTAssert(realRequest == mockRequest, "Original request should be returned when no mock is available.")
@@ -67,8 +67,8 @@ class Tests: XCTestCase {
     func testValidRequestWithMockReturnsDifferentRequest() {
         let responseHelper = SuperMockResponseHelper.sharedHelper
         
-        let url = NSURL(string: "http://mike.kz/")!
-        let realRequest = NSURLRequest(URL: url)
+        let url = URL(string: "http://mike.kz/")!
+        let realRequest = URLRequest(url: url)
         let mockRequest = responseHelper.mockRequest(realRequest)
         
         XCTAssert(realRequest != mockRequest, "Different request should be returned when a mock is available.")
@@ -77,30 +77,45 @@ class Tests: XCTestCase {
     func testValidRequestWithMockReturnsFileURLRequest() {
         let responseHelper = SuperMockResponseHelper.sharedHelper
         
-        let url = NSURL(string: "http://mike.kz/")!
-        let realRequest = NSURLRequest(URL: url)
+        let url = URL(string: "http://mike.kz/")!
+        let realRequest = URLRequest(url: url)
         let mockRequest = responseHelper.mockRequest(realRequest)
         
-        XCTAssert(mockRequest.URL!.fileURL, "fileURL mocked request should be returned when a mock is available.")
+        XCTAssertNotNil(mockRequest.url?.isFileURL, "fileURL mocked request should be returned when a mock is available.")
     }
     
     func testRecordDataAsMock() {
         
-        let url = NSURL(string: "http://mike.kz/Daniele")!
-        let realRequest = NSURLRequest(URL: url)
+        let url = URL(string: "http://mike.kz/Daniele")!
+        let realRequest = URLRequest(url: url)
         
         let responseString = "Something to put into the response field"
         
         let responseHelper = SuperMockResponseHelper.sharedHelper
-        let expectedData = responseString.dataUsingEncoding(NSUTF8StringEncoding)!
+        let expectedData = responseString.data(using: .utf8)
         
         responseHelper.recordDataForRequest(expectedData, request: realRequest)
         
         let mockRequest = responseHelper.mockRequest(realRequest)
         let returnedData = responseHelper.responseForMockRequest(mockRequest)
         
-        XCTAssert(expectedData == returnedData, "Expected data not received for mock.")
+        XCTAssertEqual(expectedData, returnedData, "Expected data not received for mock.")
         
+    }
+    
+    
+    func testIntegrationMocking() {
+        
+        let expect = expectation(description: #function)
+        let url = URL(string: "http://mike.kz/")!
+        let realRequest = URLRequest(url: url)
+        
+        SuperMock.beginRecording(Bundle(for: Tests.self), policy: .Override)
+        URLSession.shared.dataTask(with: realRequest) { (data, response, error) in
+            expect.fulfill()
+            SuperMock.endRecording()
+        }
+        wait(for: [expect], timeout: 1000.0)
     }
 
 }

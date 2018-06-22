@@ -12,13 +12,13 @@ class ViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
-    let urlSession = NSURLSession.sharedSession()
-    lazy var urlCustomSession : NSURLSession = {
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    let urlSession = URLSession.shared
+    lazy var urlCustomSession : URLSession = {
+        let sessionConfiguration = URLSessionConfiguration.default
         
         // This is the key for custom configuration, add the protocols
         sessionConfiguration.addProtocols()
-        return NSURLSession(configuration: sessionConfiguration)
+        return URLSession(configuration: sessionConfiguration)
     }()
 
     @IBOutlet weak var testableButtonOne: UIButton!    
@@ -29,108 +29,104 @@ class ViewController: UIViewController, UIWebViewDelegate {
         updateButtonTitles()
     }
     
-    @IBAction func performRealRequest(sender: AnyObject) {
+    @IBAction func performRealRequest(_ sender: AnyObject) {
         
-        let realURL = NSURL(string: "https://developer.apple.com")!
-        let requestToMock = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "https://developer.apple.com")!
+        let requestToMock = URLRequest(url: realURL)
         
-        let task = urlSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+        let task = urlSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+                let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 print("Real Response : \(stringResponse)")
                 
                 self.webView.loadHTMLString(stringResponse, baseURL: nil)
             }
-        }
+        }) 
         task.resume()
     }
     
-    @IBAction func performMockedRequest(sender: AnyObject) {
+    @IBAction func performMockedRequest(_ sender: AnyObject) {
         
-        let realURL = NSURL(string: "http://mike.kz/")!
-        let requestToMock = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "http://mike.kz/")!
+        let requestToMock = URLRequest(url: realURL)
         
-        let task = urlCustomSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+        let task = urlCustomSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                print("Mock Response : \(stringResponse)")
+                let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 
                 self.webView.loadHTMLString(stringResponse, baseURL: nil)
             }
-        }
+        }) 
         task.resume()
     }
-    @IBAction func performRealCustomRequest(sender: AnyObject) {
+    @IBAction func performRealCustomRequest(_ sender: AnyObject) {
         
-        let realURL = NSURL(string: "http://apple.com/")!
-        let requestToMock = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "http://apple.com/")!
+        let requestToMock = URLRequest(url: realURL)
         
-        let task = urlCustomSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+        let task = urlCustomSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                print("Real Response : \(stringResponse)")
+                let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 
                 self.webView.loadHTMLString(stringResponse, baseURL: nil)
             }
-        }
+        }) 
         task.resume()
     }
     
-    @IBAction func performMockedCustomRequest(sender: AnyObject) {
+    @IBAction func performMockedCustomRequest(_ sender: AnyObject) {
         
-        let realURL = NSURL(string: "http://mike.kz/")!
-        let requestToMock = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "http://mike.kz/")!
+        let requestToMock = URLRequest(url: realURL)
         
-        let task = urlSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+        let task = urlSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                print("Mock Response : \(stringResponse)")
+                let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 
                 self.webView.loadHTMLString(stringResponse, baseURL: nil)
             }
-        }
+        }) 
         task.resume()
     }
     
    func updateButtonTitles() {
         
-        let realURL = NSURL(string: "http://mike.kz/api/layout/buttons/")!
-        let requestToMock = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "http://mike.kz/api/layout/buttons/")!
+        let requestToMock = URLRequest(url: realURL)
         
-        let task = urlSession.dataTaskWithRequest(requestToMock) { (data, response, error) -> Void in
+        let task = urlSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let stringResponse = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                print("Mock Response : \(stringResponse)")
+                let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.testableButtonOne.setTitle(stringResponse, forState: .Normal)
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.testableButtonOne.setTitle(stringResponse, for: UIControlState())
                     self.testableButtonOne.accessibilityValue = stringResponse
                 })
             }
-        }
+        }) 
         task.resume()
     }
     // TODO: it is already working :)
     // TODO: The below (UIWebView Mocking)doesn't work in this version, but will in the next.
     func performSampleWebViewLoad() {
         
-        let realURL = NSURL(string: "http://mike.kz/")!
-        let realRequest = NSURLRequest(URL: realURL)
+        let realURL = URL(string: "http://mike.kz/")!
+        let realRequest = URLRequest(url: realURL)
         webView.loadRequest(realRequest)
         webView.delegate = self
     }
     
     // MARK: UIWebViewDelegate
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        print("Webview Error : \(error?.localizedDescription)")
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        print("Webview Error : \(error.localizedDescription)")
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         print("Webview Finished Loading")
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidStartLoad(_ webView: UIWebView) {
         print("Webview Started Loading")
     }
 }
