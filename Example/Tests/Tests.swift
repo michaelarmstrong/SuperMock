@@ -102,20 +102,4 @@ class Tests: XCTestCase {
         XCTAssertEqual(expectedData, returnedData, "Expected data not received for mock.")
         
     }
-    
-    
-    func testIntegrationMocking() {
-        
-        let expect = expectation(description: #function)
-        let url = URL(string: "http://mike.kz/")!
-        let realRequest = URLRequest(url: url)
-        
-        SuperMock.beginRecording(Bundle(for: Tests.self), policy: .Override)
-        URLSession.shared.dataTask(with: realRequest) { (data, response, error) in
-            expect.fulfill()
-            SuperMock.endRecording()
-        }
-        wait(for: [expect], timeout: 1000.0)
-    }
-
 }
