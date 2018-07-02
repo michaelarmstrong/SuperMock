@@ -23,18 +23,101 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Define any mocks for your application in
 ```
-Mocks.plist
+Mocks.plist 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mimes</key>
+	<dict>
+		<key>htm</key>
+		<string>text/html</string>
+		<key>html</key>
+		<string>text/html</string>
+		<key>json</key>
+		<string>application/json</string>
+	</dict>
+	<key>mocks</key>
+	<dict>
+		<key>DELETE</key>
+		<dict/>
+		<key>GET</key>
+		<dict>
+			<key>http://mike.kz/api/layout/buttons/</key>
+			<dict>
+				<key>data</key>
+				<string>buttons.txt</string>
+			</dict>
+			<key>http://mike.kz/</key>
+			<dict>
+				<key>data</key>
+				<string>sample.html</string>
+				<key>response</key>
+				<string>__mike.kz_.headers</string>
+			</dict>
+		</dict>
+		<key>POST</key>
+		<dict>
+			<key>http://mike.kz/</key>
+			<dict>
+				<key>data</key>
+				<string>samplePOST.html</string>
+			</dict>
+		</dict>
+		<key>PUT</key>
+		<dict/>
+	</dict>
+</dict>
+</plist>
+
+
 ```
-[![Mocks plist example](http://mike.kz/wp-content/uploads/2015/11/Screen-Shot-2015-11-02-at-22.32.51.png)
+The plist file will contain a dictionary for each API call with "data" for Response NSData and "response" for the HTTP Response Fields (plist file of http headers).
+```
+Mocks.plist (Extract)
+
+	<dict>
+		<key>data</key>
+		<string>sample.html</string>
+		<key>response</key>
+		<string>__mike.kz_.headers</string>
+	</dict>
+
+```
 
 Enter 2 lines of code into your AppDelegate (conditionally for your test target if required)
 ```
 let appBundle = NSBundle(forClass: AppDelegate.self)
 SuperMock.beginMocking(appBundle)
 ```
-[![AppDelegate example](http://mike.kz/wp-content/uploads/2015/11/Screen-Shot-2015-11-02-at-22.34.02.png)
 
 Your URL requests throughout your existing code base will begin to return Mocks!
+
+
+###RECORD 
+Record the Response and the headers using the recording functionality.
+
+Enter 2 lines of code into your AppDelegate (conditionally for your test target if required) to start to record
+```
+let appBundle = NSBundle(forClass: AppDelegate.self)
+SuperMock.beginRecording(appBundle, policy: .Override)
+```
+If the project bundle has a Mock.plist file, it will copy the file and fill the file with the new recorded urls. 
+If you do not have a Mock.plist file in your project it will create one.
+You can specify the mock.plist file when you begin to record
+```
+SuperMock.beginRecording(appBundle, mocksFile: "NewMock", policy: .Record)
+```
+It is recording the data in the Documents folder of the mobile application, for example in the simulator:
+```
+/Users/USERNAME/Library/Developer/CoreSimulator/Devices/142D41E4-6938-4E36-9B1F-61F5D4D5B801/data/Containers/Data/Application/376E490D-8F99-4A09-AEFD-A52B8FA6C76F/Documents
+```
+
+The log of the recording will help to find the right folder
+
+Your URL requests throughout your existing code base will begin to return Mocks!
+
 
 
 
