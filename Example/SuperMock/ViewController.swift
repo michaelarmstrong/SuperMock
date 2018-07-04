@@ -38,8 +38,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
             if let data = data {
                 let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 print("Real Response : \(stringResponse)")
-                
-                self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                DispatchQueue.main.async {
+                    self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                }
             }
         }) 
         task.resume()
@@ -53,8 +54,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let task = urlCustomSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
                 let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
-                
-                self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                DispatchQueue.main.async {
+                    self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                }
             }
         }) 
         task.resume()
@@ -67,8 +69,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let task = urlCustomSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
                 let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
-                
-                self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                DispatchQueue.main.async {
+                    self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                }
             }
         }) 
         task.resume()
@@ -82,8 +85,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let task = urlSession.dataTask(with: requestToMock, completionHandler: { (data, response, error) -> Void in
             if let data = data {
                 let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
-                
-                self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                DispatchQueue.main.async {
+                    self.webView.loadHTMLString(stringResponse, baseURL: nil)
+                }
             }
         }) 
         task.resume()
@@ -98,10 +102,10 @@ class ViewController: UIViewController, UIWebViewDelegate {
             if let data = data {
                 let stringResponse = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
                 
-                DispatchQueue.main.async(execute: { () -> Void in
+                DispatchQueue.main.async {
                     self.testableButtonOne.setTitle(stringResponse, for: UIControlState())
                     self.testableButtonOne.accessibilityValue = stringResponse
-                })
+                }
             }
         }) 
         task.resume()
