@@ -26,8 +26,6 @@
 			<dict>
 				<key>data</key>
 				<string>sample.html</string>
-				<key>response</key>
-				<string>__mike.kz_.headers</string>
 			</dict>
 		</dict>
 		<key>POST</key>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSURLRequest {
+extension URLRequest {
     
     /**
      Call to determine whether or not a NSURLRequest has an applicable mock setup in Mocks.plist
@@ -18,7 +18,7 @@ extension NSURLRequest {
     func hasMock() -> Bool {
         
         let mockRequest = SuperMockResponseHelper.sharedHelper.mockRequest(self)
-        if mockRequest.URL == self.URL {
+        if mockRequest.url == self.url {
             return false
         }
         

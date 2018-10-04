@@ -27,11 +27,11 @@ class SuperMock_ExampleUITests: XCTestCase {
 
         // Naive UI test to demonstrate how the mock is used here to validate. Should really be testing the button value.
         
-        let buttonOne = app.buttons.matchingIdentifier("testableButtonOne").element
+        let buttonOne = app.buttons.matching(identifier: "testableButtonOne").element
         let existsPredicate = NSPredicate(format: "exists == 1")
         
-        expectationForPredicate(existsPredicate, evaluatedWithObject: buttonOne, handler: nil)
-        waitForExpectationsWithTimeout(3.0, handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: buttonOne, handler: nil)
+        waitForExpectations(timeout: 3.0, handler: nil)
         
         let buttonOneText = buttonOne.value as! String
         XCTAssert(buttonOneText == "MOCKTITLE1","Button doesn't match expected value from mock")
