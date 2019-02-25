@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SuperMockURLProtocol: URLProtocol {
+@objc
+public class SuperMockURLProtocol: URLProtocol {
     
-    override class func canInit(with request: URLRequest) -> Bool {
+    override public class func canInit(with request: URLRequest) -> Bool {
         
         if request.hasMock() {
             print("Requesting MOCK for : \(String(describing: request.url))")
@@ -21,15 +22,15 @@ class SuperMockURLProtocol: URLProtocol {
     }
     
     
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
-
-    override func startLoading() {
+    
+    override public func startLoading() {
         
         let mockedRequest = SuperMockResponseHelper.sharedHelper.mockRequest(request)
         if let mockData = SuperMockResponseHelper.sharedHelper.responseForMockRequest(mockedRequest) {
-   
+            
             let mimeType = SuperMockResponseHelper.sharedHelper.mimeType(mockedRequest.url!)
             var response = URLResponse(url: mockedRequest.url!, mimeType: mimeType, expectedContentLength: mockData.count, textEncodingName: "utf8")
             if let mockResponse = SuperMockResponseHelper.sharedHelper.mockResponse(request) {
@@ -42,18 +43,19 @@ class SuperMockURLProtocol: URLProtocol {
         }
     }
     
-    override func stopLoading() {
+    override public func stopLoading() {
+        
     }
 }
 
-class SuperMockRecordingURLProtocol: URLProtocol {
+@objc
+public class SuperMockRecordingURLProtocol: URLProtocol {
     
-    var connection : NSURLConnection?
     var mutableData = NSMutableData()
     var dataTask: URLSessionDataTask?
     var response: URLResponse?
     
-    override class func canInit(with request: URLRequest) -> Bool {
+    override public class func canInit(with request: URLRequest) -> Bool {
         
         if let _ = URLProtocol.property(forKey: "SuperMockRecordingURLProtocol", in: request) {
             return false
@@ -64,15 +66,11 @@ class SuperMockRecordingURLProtocol: URLProtocol {
         return false
     }
     
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
-    }
+    } 
     
-    override class func requestIsCacheEquivalent(_ a: URLRequest, to b: URLRequest) -> Bool {
-        return super.requestIsCacheEquivalent(a, to:b)
-    }
-    
-    override func startLoading() {
+    override public func startLoading() {
         
         if let copyRequest = (request as NSURLRequest).mutableCopy() as? NSMutableURLRequest {
             
@@ -82,39 +80,44 @@ class SuperMockRecordingURLProtocol: URLProtocol {
             
             dataTask = session.dataTask(with: copyRequest as URLRequest)
             dataTask?.resume()
-            self.dataTask!.resume()
         }
     }
     
-    override func stopLoading() {
+    override public func stopLoading() {
         dataTask?.cancel()
+        dataTask = nil
         response = nil
         mutableData = NSMutableData()
-        
-        connection?.cancel()
     }
 }
+
 extension SuperMockRecordingURLProtocol: URLSessionDataDelegate {
     
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+    public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         client?.urlProtocol(self, didLoad: data)
         mutableData.append(data)
     }
 }
+
 extension SuperMockRecordingURLProtocol: URLSessionTaskDelegate {
     
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+    public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         mutableData = NSMutableData()
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: URLCache.StoragePolicy.notAllowed)
         completionHandler(.allow)
     }
     
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
             client?.urlProtocol(self, didFailWithError: error)
             return
         }
-        SuperMockResponseHelper.sharedHelper.recordDataForRequest(mutableData as Data, request: request)
+        if let httpResponse = task.response as? HTTPURLResponse {
+            
+            var headersModified = httpResponse.allHeaderFields
+            headersModified["status"] = "\(httpResponse.statusCode)"
+            SuperMockResponseHelper.sharedHelper.recordDataForRequest(mutableData as Data, httpHeaders: headersModified, request: request)
+        }
         client?.urlProtocolDidFinishLoading(self)
         
     }
