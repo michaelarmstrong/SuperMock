@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "SuperMock"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
+  s.swift_version    = "4.2"
   s.summary          = "A very simple yet powerful UI and Unit testing HTTP mock framework. Lives in your app and runs offline."
 
   s.description      = <<-DESC
