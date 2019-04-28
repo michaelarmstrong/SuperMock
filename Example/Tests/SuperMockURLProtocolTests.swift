@@ -204,7 +204,7 @@ class SuperMockURecordingRLProtocolTests: XCTestCase {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         sut.mutableData = NSMutableData(base64Encoded: "someData".data(using: .utf8)!, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)!
         let request = URLRequest(url: URL(string: "http://apple.com/")!)
-        SuperMockRecordingURLProtocol.canInit(with: request)
+        _ = SuperMockRecordingURLProtocol.canInit(with: request)
         
         let bundle = Bundle(for: SuperMockURLProtocolTests.self)
         

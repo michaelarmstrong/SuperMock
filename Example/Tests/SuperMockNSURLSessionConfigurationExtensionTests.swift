@@ -24,8 +24,14 @@ class SuperMockNSURLSessionConfigurationExtensionTests: XCTestCase {
         SuperMock.beginMocking(Bundle(for: SuperMockNSURLSessionConfigurationExtensionTests.self))
         let sut = URLSessionConfiguration.background(withIdentifier: "")
         sut.addProtocols()
-        
-        XCTAssertTrue(sut.protocolClasses?.first === SuperMockURLProtocol.self)
+
+        XCTAssertTrue(verify(protocols: sut.protocolClasses, contains: SuperMockURLProtocol.self), "SuperMockUrlProtocol is not the first protocol in \(String(describing: sut.protocolClasses))")
         SuperMock.endMocking()
+    }
+
+    private func verify(protocols:[AnyClass]?, contains aClass: AnyClass) -> Bool {
+        return protocols?.contains(where: { classProtocol -> Bool in
+           return classProtocol === aClass
+        }) ?? false
     }
 }
