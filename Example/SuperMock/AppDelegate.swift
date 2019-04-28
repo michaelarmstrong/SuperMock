@@ -19,26 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // You could conditionally enable/disable this based on target macro or build parameter.
         let appBundle = Bundle(for: AppDelegate.self)
         SuperMock.beginMocking(appBundle)
-//        SuperMock.beginRecording(appBundle, policy: .Override)
         
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-
-
 }
 
