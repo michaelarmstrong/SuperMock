@@ -1,10 +1,14 @@
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+inhibit_all_warnings!
+
+xcodeproj 'SuperMock'
 use_frameworks!
 
-target 'SuperMock_Example', :exclusive => true do
+target 'SuperMock_Example' do
   pod "SuperMock", :path => "../"
 end
 
-target 'SuperMock_Tests', :exclusive => true do
+target 'SuperMock_Tests' do
   pod "SuperMock", :path => "../"
 end
