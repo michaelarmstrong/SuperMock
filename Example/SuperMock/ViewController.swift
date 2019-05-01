@@ -110,8 +110,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         }) 
         task.resume()
     }
-    // TODO: it is already working :)
-    // TODO: The below (UIWebView Mocking)doesn't work in this version, but will in the next.
+    
     func performSampleWebViewLoad() {
         
         let realURL = URL(string: "http://mike.kz/")!

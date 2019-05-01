@@ -11,15 +11,18 @@ import XCTest
 
 class SuperMockResponseHelperTests: XCTestCase {
 
-    var sut = SuperMockResponseHelper.sharedHelper
+    var sut: SuperMockResponseHelper!
     let bundle = Bundle(for: SuperMockResponseHelperTests.self)
     
     override func setUp() {
         super.setUp()
-        SuperMockResponseHelper.bundleForMocks = bundle
+        sut = SuperMockResponseHelper()
+        sut.bundle =  Bundle(for: SuperMockResponseHelperTests.self)
+        sut.mocksFile = "MocksYata.plist"
     }
     
     func test_bundleForMocks_returnCorrectBundle() {
+        SuperMockResponseHelper.sharedHelper.bundle = sut.bundle
         XCTAssertEqual(SuperMockResponseHelper.bundleForMocks, bundle)
     }
     

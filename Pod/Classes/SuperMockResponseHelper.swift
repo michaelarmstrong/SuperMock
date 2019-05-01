@@ -35,7 +35,7 @@ class SuperMockResponseHelper: NSObject {
     
     let fileManager = FileManager.default
     
-    fileprivate var bundle : Bundle? {
+    var bundle : Bundle? {
         didSet {
             loadDefinitions()
         }
@@ -195,6 +195,7 @@ class SuperMockResponseHelper: NSObject {
     func recordDataForRequest(_ data: Data?, httpHeaders: [AnyHashable: Any]?, request: URLRequest) {
         guard let headers = httpHeaders
             else { return }
+        
         var headersData = try? JSONSerialization.data(withJSONObject: headers, options: .prettyPrinted)
         if headersData == nil {
             headersData = NSKeyedArchiver.archivedData(withRootObject: headers)
@@ -343,11 +344,13 @@ extension SuperMockResponseHelper {
     func mockFileOutOfBundle() -> String? {
         
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentsDirectory = paths[0] as? String
-        guard let bundle = bundle else {
+        
+        guard let bundle = bundle,
+              let documentsDirectory = paths[0] as? String else {
             return nil
         }
-        let mocksPath = (documentsDirectory)! + "/" + mocksFile
+        try? FileManager.default.createDirectory(atPath: documentsDirectory, withIntermediateDirectories: true, attributes: nil)
+        let mocksPath = (documentsDirectory) + "/" + mocksFile
         
         print("Recording mocks at: \(mocksPath)")
         if !FileManager.default.fileExists(atPath: mocksPath),

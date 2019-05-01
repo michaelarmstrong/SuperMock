@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,15 +18,15 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Mj-b9t">
-                                <rect key="frame" x="0.0" y="96" width="600" height="460"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="527"/>
+                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-Vh-Usx">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4Ra-XP-5tj"/>
                                 </constraints>
@@ -41,15 +45,15 @@
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc1-K9-q6O">
-                                <rect key="frame" x="150" y="11" width="300" height="77"/>
+                                <rect key="frame" x="37.5" y="11" width="300" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzc-WY-RdN">
                                         <rect key="frame" x="14" y="14" width="272" height="49"/>
-                                        <color key="backgroundColor" red="0.32119226629999997" green="0.60169664619999996" blue="0.83808791039999997" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.32119226629999997" green="0.60169664619999996" blue="0.83808791039999997" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="testableButtonOne"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="2c6-dl-VIX"/>
-                                            <constraint firstAttribute="width" constant="272" id="M4J-eA-Si3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="M4J-eA-Si3"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="gd6-i5-wUb"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="i3z-yI-1L2"/>
                                         </constraints>
@@ -64,9 +68,10 @@
                                         </variation>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="DEt-tc-8U5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hzc-WY-RdN" secondAttribute="trailing" constant="14" id="HQB-Yl-TAv"/>
                                     <constraint firstAttribute="height" constant="77" id="OkB-Bo-pSx"/>
                                     <constraint firstItem="Hzc-WY-RdN" firstAttribute="top" secondItem="Hc1-K9-q6O" secondAttribute="top" constant="14" id="WeG-6h-rLT"/>
                                     <constraint firstAttribute="bottom" secondItem="Hzc-WY-RdN" secondAttribute="bottom" constant="14" id="ZBx-ym-98U"/>
@@ -74,7 +79,7 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5d-Dk-yDw">
-                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g3J-zK-6G9"/>
                                 </constraints>
@@ -93,7 +98,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f5d-Dk-yDw" firstAttribute="bottom" secondItem="KEq-Vh-Usx" secondAttribute="top" id="5qT-cn-Gry"/>
                             <constraint firstAttribute="trailing" secondItem="t84-Mj-b9t" secondAttribute="trailing" id="Hfk-Nt-e7b"/>
