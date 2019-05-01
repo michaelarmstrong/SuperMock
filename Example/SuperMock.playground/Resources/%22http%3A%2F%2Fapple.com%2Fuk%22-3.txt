@@ -1,0 +1,15 @@
+{
+  "Content-Type" : "text\/html; charset=UTF-8",
+  "x-frame-options" : "SAMEORIGIN",
+  "Server" : "Apache",
+  "status" : "400",
+  "Content-Length" : "7991",
+  "x-xss-protection" : "1; mode=block",
+  "Content-Encoding" : "gzip",
+  "Expires" : "Mon, 29 Apr 2019 05:13:35 GMT",
+  "Set-Cookie" : "geo=GB; path=\/; domain=.apple.com, ccl=dZSxqifJrQ6wctjgcgQtdQ==; path=\/; domain=.apple.com",
+  "Vary" : "Accept-Encoding",
+  "Cache-Control" : "max-age=0",
+  "Date" : "Mon, 29 Apr 2019 05:13:35 GMT",
+  "x-content-type-options" : "nosniff"
+}
