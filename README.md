@@ -35,7 +35,7 @@ SuperMock.beginMocking(appBundle)
 Your URL requests throughout your existing code base will begin to return Mocks!
 
 
-###RECORD 
+### RECORD 
 Record the Response and the headers using the recording functionality.
 
 Enter 2 lines of code to start to record
