@@ -31,10 +31,12 @@ open class SuperMock: NSObject {
         registerForMocking(configuration: configuration)
         
         session.configuration.protocolClasses?.append(SuperMockURLProtocol.self)
-        
+
         SuperMockResponseHelper.sharedHelper.mocksFile = mocksFile
         SuperMockResponseHelper.bundleForMocks = bundle
         SuperMockResponseHelper.sharedHelper.mocking = true
+
+
     }
     
     open class func beginRecording(_ bundle: Bundle?,

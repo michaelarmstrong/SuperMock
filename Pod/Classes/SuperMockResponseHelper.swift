@@ -87,7 +87,7 @@ class SuperMockResponseHelper: NSObject {
         
         let method = request.httpMethod ?? "GET"
         let requestMethod = RequestMethod(rawValue: method) ?? .GET
-        
+
         let mockURL = mockURLForRequestURL(request.url!, requestMethod: requestMethod, mocks: mocks)
         if mockURL == request.url {
             return request
@@ -117,20 +117,21 @@ class SuperMockResponseHelper: NSObject {
         guard let definitionsForMethod = mocks[requestMethod.rawValue] as? NSMutableDictionary else {
             fatalError("Couldn't find definitions for request: \(requestMethod) make sure to create a node for it in the plist")
         }
-        
+
         if let responseFiles = definitionsForMethod[url.absoluteString] as? NSMutableArray,
             let responseFileDictionary = responseFiles.firstObject as? [String: String] {
-            
+
             if let responseFile = responseFileDictionary[dataKey],
                 let responsePath = bundle?.path(forResource: responseFile, ofType: ""),
                 isData {
                 return URL(fileURLWithPath: responsePath)
             }
-            
+
             if let responseFile = responseFileDictionary[responseKey],
                 let responsePath = bundle?.path(forResource: responseFile, ofType: ""),
                 !isData {
                 if responseFiles.count > 1 {
+
                     let reducedResponsesArray = NSMutableArray(array: responseFiles)
                     reducedResponsesArray.removeObject(at: 0)
                     let requestMocks = mocks["\(requestMethod)"] as? NSDictionary ?? [:]
@@ -138,6 +139,7 @@ class SuperMockResponseHelper: NSObject {
                     mutableMocks["\(url)"] = reducedResponsesArray
                     self.mocks["\(requestMethod)"] = mutableMocks
                 }
+
                 return URL(fileURLWithPath: responsePath)
             }
         }
