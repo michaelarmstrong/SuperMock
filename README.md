@@ -11,7 +11,7 @@ A very simple yet powerful UI and Unit testing mock framework for API calls. It 
 * Works offline
 * No Server
 * No Proxies
-* Pure Swift / Objective-C
+* Pure Swift 4.2
 * Very flexible
 
 [Reasoning, Motivation and More info about the project](http://mike.kz/general/mocking-data-for-ui-testing-in-xcode-7/)
@@ -20,73 +20,13 @@ A very simple yet powerful UI and Unit testing mock framework for API calls. It 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Follow the Playground to learn how to use it.
 
-Define any mocks for your application in
-```
-Mocks.plist 
+Define any mocks for your application in a mocks plist file similar to the example included.
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>mimes</key>
-	<dict>
-		<key>htm</key>
-		<string>text/html</string>
-		<key>html</key>
-		<string>text/html</string>
-		<key>json</key>
-		<string>application/json</string>
-	</dict>
-	<key>mocks</key>
-	<dict>
-		<key>DELETE</key>
-		<dict/>
-		<key>GET</key>
-		<dict>
-			<key>http://mike.kz/api/layout/buttons/</key>
-			<dict>
-				<key>data</key>
-				<string>buttons.txt</string>
-			</dict>
-			<key>http://mike.kz/</key>
-			<dict>
-				<key>data</key>
-				<string>sample.html</string>
-				<key>response</key>
-				<string>__mike.kz_.headers</string>
-			</dict>
-		</dict>
-		<key>POST</key>
-		<dict>
-			<key>http://mike.kz/</key>
-			<dict>
-				<key>data</key>
-				<string>samplePOST.html</string>
-			</dict>
-		</dict>
-		<key>PUT</key>
-		<dict/>
-	</dict>
-</dict>
-</plist>
+The plist file will contain a dictionary for each API call with an array of dictionaries with "data" for Response NSData and "response" for the HTTP Response Fields (plist file of http headers).
 
-
-```
-The plist file will contain a dictionary for each API call with "data" for Response NSData and "response" for the HTTP Response Fields (plist file of http headers).
-```
-Mocks.plist (Extract)
-
-	<dict>
-		<key>data</key>
-		<string>sample.html</string>
-		<key>response</key>
-		<string>__mike.kz_.headers</string>
-	</dict>
-
-```
-
-Enter 2 lines of code into your AppDelegate (conditionally for your test target if required)
+Enter 2 lines of code 
 ```
 let appBundle = NSBundle(forClass: AppDelegate.self)
 SuperMock.beginMocking(appBundle)
@@ -98,7 +38,7 @@ Your URL requests throughout your existing code base will begin to return Mocks!
 ###RECORD 
 Record the Response and the headers using the recording functionality.
 
-Enter 2 lines of code into your AppDelegate (conditionally for your test target if required) to start to record
+Enter 2 lines of code to start to record
 ```
 let appBundle = NSBundle(forClass: AppDelegate.self)
 SuperMock.beginRecording(appBundle, policy: .Override)
@@ -116,12 +56,6 @@ It is recording the data in the Documents folder of the mobile application, for 
 
 The log of the recording will help to find the right folder
 
-Your URL requests throughout your existing code base will begin to return Mocks!
-
-
-
-
-## Requirements
 
 ## Installation
 
@@ -133,9 +67,9 @@ use_frameworks!
 pod "SuperMock"
 ```
 
-## Author
+## Authors
 
-Michael Armstrong, [@ArmstrongAtWork](http://twitter.com/ArmstrongAtWork)
+Michael Armstrong, [@ArmstrongAtWork](http://twitter.com/ArmstrongAtWork), Daniele Forlani
 
 ## License
 
