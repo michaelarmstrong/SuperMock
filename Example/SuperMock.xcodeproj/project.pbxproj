@@ -89,7 +89,7 @@
 		630ACECA1BE7E1D200D18B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		630ACED01BE7E39400D18B4E /* buttons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buttons.txt; sourceTree = "<group>"; };
 		985EC4304DE108E29F48029C /* Pods-SuperMock_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMock_Tests.release.xcconfig"; path = "Target Support Files/Pods-SuperMock_Tests/Pods-SuperMock_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A05ABBA08000628BBF58ECD1 /* SuperMock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperMock.podspec; path = ../SuperMock.podspec; sourceTree = "<group>"; };
+		A05ABBA08000628BBF58ECD1 /* SuperMock.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperMock.podspec; path = ../SuperMock.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA42BB330F52FA2820B461E0 /* Pods_SuperMock_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA8CD6639BB038C48A02596 /* Pods_SuperMock_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMock_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -247,7 +247,6 @@
 				617BC3808627E69A8F7EAED9 /* Pods-SuperMock_Tests.debug.xcconfig */,
 				985EC4304DE108E29F48029C /* Pods-SuperMock_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
