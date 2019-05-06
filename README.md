@@ -14,8 +14,6 @@ A very simple yet powerful UI and Unit testing mock framework for API calls. It 
 * Pure Swift 4.2
 * Very flexible
 
-[Reasoning, Motivation and More info about the project](http://mike.kz/general/mocking-data-for-ui-testing-in-xcode-7/)
-
 
 ## Usage
 
