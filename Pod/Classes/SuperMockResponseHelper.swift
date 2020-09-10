@@ -114,7 +114,7 @@ class SuperMockResponseHelper: NSObject {
     
     fileprivate func mockURLForRequestURL(_ url: URL, requestMethod: RequestMethod, mocks: NSMutableDictionary, isData: Bool) -> URL? {
         
-        guard let definitionsForMethod = mocks[requestMethod.rawValue] as? NSMutableDictionary else {
+        guard let definitionsForMethod = mocks[requestMethod.rawValue] as? NSDictionary else {
             fatalError("Couldn't find definitions for request: \(requestMethod) make sure to create a node for it in the plist")
         }
 
